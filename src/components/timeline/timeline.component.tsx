@@ -31,6 +31,12 @@ const SubTitle = styled.h4`
 const Description = styled.p`
   font-size: 14px !important;
 `
+const Logo = styled(CompanyLogo)`
+  @media (max-width: 1169px) {
+    max-width: 40px;
+    max-height: 40px;
+  }
+`
 
 interface TimelineProps {
   className?: string
@@ -50,7 +56,7 @@ export const Timeline = ({ className }: TimelineProps) => {
             contentArrowStyle={{ borderRight: `7px solid ${background}` }}
             date={`${job.date} (${job.duration})`}
             iconStyle={{ background, color: 'fff' }}
-            icon={<CompanyLogo name={job.companyIcon} />}
+            icon={<Logo name={job.companyIcon} />}
           >
             <Title>{job.occupation}</Title>
             <SubTitle>
