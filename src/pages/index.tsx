@@ -78,22 +78,22 @@ export default function Home() {
           <Avatar fixed={data.file.childImageSharp.fixed} />
           <SocialWrapper>
             {siteConfig.social.github && (
-              <SocialLink color="#24292e" href={siteConfig.social.github}>
+              <SocialLink color="#24292e" href={siteConfig.social.github} aria-label="github">
                 <GitHub size="32" />
               </SocialLink>
             )}
             {siteConfig.social.linkedin && (
-              <SocialLink color="#0077B5" href={siteConfig.social.linkedin}>
+              <SocialLink color="#0077B5" href={siteConfig.social.linkedin} aria-label="linkedin">
                 <Linkedin size="32" />
               </SocialLink>
             )}
             {siteConfig.social.telergam && (
-              <SocialLink color="#259CD9" href={siteConfig.social.telergam}>
+              <SocialLink color="#259CD9" href={siteConfig.social.telergam} aria-label="telergam">
                 <FaTelegram size="32" />
               </SocialLink>
             )}
             {siteConfig.social.email && (
-              <SocialLink color="#c23a2b" href={`mailto:${siteConfig.social.email}`}>
+              <SocialLink color="#c23a2b" href={`mailto:${siteConfig.social.email}`} aria-label="email">
                 <Mail size="32" />
               </SocialLink>
             )}

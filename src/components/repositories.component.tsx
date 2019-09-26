@@ -35,7 +35,7 @@ const Stars = styled.div`
   margin-left: 5px;
 `
 const Caption = styled.div`
-  color: ${(p) => p.theme.palette.text.disabled};
+  color: ${(p) => p.theme.palette.text.secondary};
   font-size: 12px;
 `
 
