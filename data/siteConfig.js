@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 module.exports = {
-  siteTitle: 'Hi! I\'m Eugene!',
+  siteTitle: 'Eugene Draitsev',
   siteDescription: 'Eugene Draitsev CV',
   keyWords: ['Eugene Draitsev', 'software-engineer', 'frontend-developer'],
   authorName: 'Eugene Draitsev',
@@ -76,7 +76,6 @@ module.exports = {
     email: 'ddrrai@gmail.com',
   },
   siteUrl: 'https://eugene-draitsev.netlify.com/',
-  pathPrefix: '/cv', // Note: it must *not* have a trailing slash.
   siteCover: '/images/cover.jpeg',
   background_color: '#ffffff',
   theme_color: '#112B48',

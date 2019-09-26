@@ -68,11 +68,10 @@ const query = graphql`
 `
 
 export default function Home() {
-  const title = siteConfig.siteTitle
   const data = useStaticQuery(query)
 
   return (
-    <HeaderLayout title={title} heroImg={siteConfig.siteCover} keywords={siteConfig.keyWords}>
+    <HeaderLayout title="CV" heroImg={siteConfig.siteCover} heroTitle="Hi! I'm Eugene!" keywords={siteConfig.keyWords}>
       <PageContent>
         <MainContent>
           <Avatar fixed={data.file.childImageSharp.fixed} />

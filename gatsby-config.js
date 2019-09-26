@@ -45,9 +45,8 @@ module.exports = {
         respectDNT: true,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -63,6 +62,16 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Roboto',
+            variants: ['300', '400', '500', '700'],
+          },
+        ],
+      },
+    },
   ],
 }

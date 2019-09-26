@@ -5,15 +5,16 @@ import find from 'lodash/find'
 
 import { graphql, useStaticQuery } from 'gatsby'
 
-interface CompanyLogoProps {
-  name: string
-}
-
 const Logo = styled(Img)`
   border-radius: 50%;
 `
 
-export const CompanyLogo = memo(({ name }: CompanyLogoProps) => {
+interface CompanyLogoProps {
+  name: string
+  className?: string
+}
+
+export const CompanyLogo = memo(({ name, className }: CompanyLogoProps) => {
   const query = graphql`
     query {
       images: allFile {
@@ -34,5 +35,5 @@ export const CompanyLogo = memo(({ name }: CompanyLogoProps) => {
 
   const data = useStaticQuery(query)
   const image = find(data.images.edges, (x) => x.node.relativePath.includes(`companies/${name}.png`))
-  return <Logo fixed={image.node.childImageSharp.fixed} />
+  return <Logo className={className} fixed={image.node.childImageSharp.fixed} />
 })
