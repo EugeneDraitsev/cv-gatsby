@@ -49,20 +49,15 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
-        host: 'https://eugene-draitsev.surge.sh/',
-        sitemap: 'https://eugene-draitsev.surge.sh//sitemap.xml',
-        env: {
-          development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+        fonts: [
+          {
+            family: 'Roboto',
+            variants: ['300', '400', '500', '700'],
           },
-          production: {
-            policy: [{ userAgent: '*', allow: '/' }],
-          },
-        },
+        ],
       },
     },
-    'gatsby-plugin-sitemap',
   ],
 }
