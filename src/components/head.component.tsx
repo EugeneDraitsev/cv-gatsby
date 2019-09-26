@@ -65,6 +65,10 @@ export const Head = ({ description, meta = [], keywords, title }: HeadProps) => 
       name: 'twitter:description',
       content: metaDescription,
     },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0',
+    },
   ]
   const keywordsTag = isEmpty(keywords) ? [] : { name: 'keywords', content: keywords!.join(', ') }
   const metaTags = concat(defaultMetaTags, meta, keywordsTag)

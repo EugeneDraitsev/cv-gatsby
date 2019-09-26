@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 module.exports = {
-  siteTitle: 'Hi! I\'m Eugene!',
+  siteTitle: 'Eugene Draitsev',
   siteDescription: 'Eugene Draitsev CV',
   keyWords: ['Eugene Draitsev', 'software-engineer', 'frontend-developer'],
   authorName: 'Eugene Draitsev',
