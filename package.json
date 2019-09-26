@@ -9,8 +9,7 @@
     "tsc": "tsc",
     "lint": "eslint \"src/**\"",
     "lint:fix": "eslint \"src/**\" --fix",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "surge public eugene-draitsev.surge.sh"
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
     "@material-ui/core": "^4.4.3",
@@ -48,11 +47,11 @@
     "gatsby-plugin-react-helmet": "3.1.8",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "2.2.25",
+    "gatsby-plugin-sitemap": "^2.2.16",
     "gatsby-plugin-styled-components": "3.1.6",
     "gatsby-plugin-typescript": "^2.1.9",
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-sharp": "2.2.17",
-    "surge": "^0.21.3",
     "typescript": "^3.6.3"
   },
   "license": "MIT"

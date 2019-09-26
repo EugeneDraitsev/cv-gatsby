@@ -4,4 +4,4 @@
 
 Initially was created from [this starter](https://www.gatsbyjs.org/starters/santosfrancisco/gatsby-starter-cv/) and fully reworked to typescript
 
-Cv is available [here](https://eugene-draitsev.surge.sh/)
+Cv is available [here](https://eugene-draitsev.netlify.com/)
