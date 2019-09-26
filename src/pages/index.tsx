@@ -9,7 +9,7 @@ import siteConfig from '../../data/siteConfig'
 import { HeaderLayout } from '../components/layout/header-layout.component'
 import { About } from '../components/about.component'
 import { Skills } from '../components/skills.component'
-import { Timeline } from '../components/timeline.component'
+import { Timeline } from '../components/timeline'
 import { Repositories } from '../components/repositories.component'
 import { getTransition } from '../styles'
 
@@ -72,7 +72,7 @@ export default function Home() {
   const data = useStaticQuery(query)
 
   return (
-    <HeaderLayout title={title} heroImg={siteConfig.siteCover}>
+    <HeaderLayout title={title} heroImg={siteConfig.siteCover} keywords={siteConfig.keyWords}>
       <PageContent>
         <MainContent>
           <Avatar fixed={data.file.childImageSharp.fixed} />

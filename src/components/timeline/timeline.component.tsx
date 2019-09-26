@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
-import { Watch } from 'react-feather'
 import map from 'lodash/map'
 import 'react-vertical-timeline-component/style.min.css'
 
-import siteConfig from '../../data/siteConfig'
-import { ThemeContext } from '../contexts'
+import siteConfig from '../../../data/siteConfig'
+import { ThemeContext } from '../../contexts'
+import { CompanyLogo } from './company-logo.component'
 
 const Wrapper = styled.div`
   color: white;
@@ -50,7 +50,7 @@ export const Timeline = ({ className }: TimelineProps) => {
             contentArrowStyle={{ borderRight: `7px solid ${background}` }}
             date={`${job.date} (${job.duration})`}
             iconStyle={{ background, color: 'fff' }}
-            icon={<Watch />}
+            icon={<CompanyLogo name={job.companyIcon} />}
           >
             <Title>{job.occupation}</Title>
             <SubTitle>

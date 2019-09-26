@@ -3,7 +3,7 @@
 module.exports = {
   siteTitle: 'Hi! I\'m Eugene!',
   siteDescription: 'Eugene Draitsev CV',
-  keyWords: ['frontend-developer', 'cv'],
+  keyWords: ['Eugene Draitsev', 'software-engineer', 'frontend-developer'],
   authorName: 'Eugene Draitsev',
   githubUsername: 'EugeneDraitsev',
   authorAvatar: '/images/avatar.jpg',
@@ -37,6 +37,7 @@ module.exports = {
   jobs: [
     {
       company: 'eBuilder',
+      companyIcon: 'ebuilder',
       date: 'Aug 2016 –  Now',
       duration: '3 years',
       location: 'Stockholm, Sweden / Minsk, Belarus',
@@ -44,6 +45,7 @@ module.exports = {
       description: 'Architect and develop frontend applications, mobile apps, GraphQl services and AWS infrastructure for that (TypeScript/Node/React)',
     }, {
       company: 'ISSoft Solutions',
+      companyIcon: 'issoft',
       date: 'Sep 2013  –  Aug 2016',
       duration: '3 years',
       location: 'Minsk, Belarus',
@@ -51,6 +53,7 @@ module.exports = {
       description: 'Develop web applications (Java backend + Angular Fronted) for customers from USA and Norway. A bit work with AWS services',
     }, {
       company: 'Qulix Systems',
+      companyIcon: 'qulix',
       date: 'Nov 2012 –  Sep 2013',
       duration: '10 months',
       location: 'Minsk, Belarus',
@@ -58,6 +61,7 @@ module.exports = {
       description: 'Support and develop web applications for banks systems (Java + Js/Jquery)',
     }, {
       company: 'Epam Systems',
+      companyIcon: 'epam',
       date: 'Dec 2011 – Nov 2012',
       duration: '11 months',
       location: 'Minsk, Belarus',
@@ -74,12 +78,12 @@ module.exports = {
   siteUrl: 'https://eugenedraitsev.github.io/cv',
   pathPrefix: '/cv', // Note: it must *not* have a trailing slash.
   siteCover: '/images/cover.jpeg',
-  googleAnalyticsId: 'UA-000000000-1',
+  googleAnalyticsId: 'UA-148833799-1',
   background_color: '#ffffff',
   theme_color: '#112B48',
   display: 'minimal-ui',
   icon: 'src/assets/gatsby-icon.png',
-  pdf: 'static/Draitsev, Eugene.pdf',
+  pdf: 'static/eugene-draitsev.pdf',
   headerLinks: [
     {
       label: 'Eugene Draitsev',

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // @ts-ignore
-import pdf from '../../static/Draitsev, Eugene.pdf'
+import pdf from '../../static/eugene-draitsev.pdf'
 import { Link } from './link.component'
 
 interface AboutProps {
@@ -13,6 +13,6 @@ export const About = ({ title = 'about', text = '' }: AboutProps) => (
   <div>
     <h1>{title}</h1>
     <p>{text}</p>
-    You can find my detailed CV in pdf <Link href={pdf}>here</Link>
+    You can find my <Link href={pdf}>detailed CV in pdf here</Link>
   </div>
 )

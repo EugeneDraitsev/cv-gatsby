@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { GitHub } from 'react-feather'
 import map from 'lodash/map'
 
 import { ThemeSwitcher } from '../theme-switcher.component'
@@ -33,9 +32,6 @@ const HeaderLink = styled(Link)`
   padding: 0 20px;
   font-weight: 500;
 `
-const GithubLink = styled.a`
-  margin-right: 20px;
-`
 const HeaderIcons = styled.div`
   display: flex;
   align-items: center;
@@ -56,9 +52,6 @@ export const Header = () => {
           ))}
         </HeaderLinkGroup>
         <HeaderIcons>
-          <GithubLink href={`https://github.com/${siteConfig.githubUsername}`}>
-            <GitHub size={28} />
-          </GithubLink>
           <ThemeSwitcher />
         </HeaderIcons>
       </HeaderNav>
