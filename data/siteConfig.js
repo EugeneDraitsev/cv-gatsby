@@ -76,7 +76,6 @@ module.exports = {
     email: 'ddrrai@gmail.com',
   },
   siteUrl: 'https://eugene-draitsev.netlify.com/',
-  pathPrefix: '/cv', // Note: it must *not* have a trailing slash.
   siteCover: '/images/cover.jpeg',
   background_color: '#ffffff',
   theme_color: '#112B48',

@@ -15,6 +15,7 @@ const Content = styled.main`
   padding: 50px;
   border-radius: 4px;
   box-shadow: ${(p) => p.theme.shadows[2]};
+  overflow: hidden;
   @media (max-width: 800px) {
     width: 90%;
     padding: 25px;
