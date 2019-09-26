@@ -10,7 +10,7 @@
     "lint": "eslint \"src/**\"",
     "lint:fix": "eslint \"src/**\" --fix",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "gh-pages -d public"
+    "deploy": "surge build eugene-draitsev.surge.sh"
   },
   "dependencies": {
     "@material-ui/core": "^4.4.3",
