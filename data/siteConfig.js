@@ -78,7 +78,6 @@ module.exports = {
   siteUrl: 'https://eugene-draitsev.netlify.com/',
   pathPrefix: '/cv', // Note: it must *not* have a trailing slash.
   siteCover: '/images/cover.jpeg',
-  googleAnalyticsId: 'UA-148833799-1',
   background_color: '#ffffff',
   theme_color: '#112B48',
   display: 'minimal-ui',
