@@ -75,7 +75,7 @@ module.exports = {
     github: 'https://github.com/EugeneDraitsev',
     email: 'ddrrai@gmail.com',
   },
-  siteUrl: 'https://eugenedraitsev.github.io/cv',
+  siteUrl: 'https://eugene-draitsev.netlify.com/',
   pathPrefix: '/cv', // Note: it must *not* have a trailing slash.
   siteCover: '/images/cover.jpeg',
   googleAnalyticsId: 'UA-148833799-1',

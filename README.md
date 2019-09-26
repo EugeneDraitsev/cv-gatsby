@@ -1,4 +1,4 @@
-![Deploy Latest Master](https://github.com/EugeneDraitsev/cv/workflows/Deploy%20Latest%20Master/badge.svg)
+![Deploy Latest Master](https://github.com/EugeneDraitsev/cv/workflows/Check%20Latest%20Master/badge.svg)
 
 ## Gatsby based CV
 

@@ -76,7 +76,7 @@ export const Head = ({ description, meta = [], keywords, title }: HeadProps) => 
       titleTemplate={`%s | ${data.site.siteMetadata.title}`}
       meta={metaTags}
     >
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto" />
     </Helmet>
   )
 }
