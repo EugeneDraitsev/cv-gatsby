@@ -1,51 +1,57 @@
 {
-  "name": "gatsby-starter-cv",
-  "private": true,
-  "description": "A simple starter to get up and developing your digital curriculum with GatsbyJS",
-  "version": "0.0.1",
-  "author": "Francisco Santos <yoshi.df@gmail.com>",
-  "dependencies": {
-    "babel-plugin-styled-components": "1.10.0",
-    "gatsby": "2.4.2",
-    "gatsby-image": "2.0.41",
-    "gatsby-plugin-google-analytics": "2.0.19",
-    "gatsby-plugin-manifest": "2.1.1",
-    "gatsby-plugin-offline": "2.1.0",
-    "gatsby-plugin-react-helmet": "3.0.12",
-    "gatsby-plugin-sharp": "2.0.36",
-    "gatsby-plugin-styled-components": "3.0.7",
-    "gatsby-source-filesystem": "2.0.33",
-    "gatsby-transformer-sharp": "2.1.19",
-    "prop-types": "15.7.2",
-    "react": "16.8.6",
-    "react-awesome-styled-grid": "2.2.3",
-    "react-dom": "16.8.6",
-    "react-helmet": "5.2.1",
-    "react-icons": "3.6.1",
-    "simple-json-fetch": "1.0.1",
-    "styled-components": "4.2.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "name": "gatsby-cv",
+  "version": "0.1.0",
+  "description": "CV based on GatsbyJS",
+  "author": "Eugene Draitsev <ddrrai@gmail.com>",
   "scripts": {
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "tsc": "tsc",
+    "lint": "eslint \"src/**\"",
+    "lint:fix": "eslint \"src/**\" --fix",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.4.3",
+    "@material-ui/styles": "^4.4.3",
+    "gatsby": "2.15.25",
+    "gatsby-image": "2.2.21",
+    "lodash": "^4.17.15",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-feather": "^2.0.3",
+    "react-helmet": "5.2.1",
+    "react-icons": "3.7.0",
+    "react-use": "^12.2.1",
+    "react-vertical-timeline-component": "^2.5.0",
+    "styled-components": "4.4.0"
   },
   "devDependencies": {
-    "gh-pages": "2.0.1",
-    "prettier": "1.17.0"
+    "@types/lodash": "^4.14.139",
+    "@types/node": "^12.7.7",
+    "@types/react": "^16.9.3",
+    "@types/react-dom": "^16.9.1",
+    "@types/react-helmet": "^5.0.10",
+    "@types/react-vertical-timeline-component": "^2.3.1",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "babel-plugin-styled-components": "1.10.6",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "gatsby-plugin-google-analytics": "2.1.17",
+    "gatsby-plugin-manifest": "2.2.18",
+    "gatsby-plugin-offline": "3.0.9",
+    "gatsby-plugin-react-helmet": "3.1.8",
+    "gatsby-plugin-sharp": "2.2.25",
+    "gatsby-plugin-styled-components": "3.1.6",
+    "gatsby-plugin-typescript": "^2.1.9",
+    "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-transformer-sharp": "2.2.17",
+    "gh-pages": "2.1.1",
+    "typescript": "^3.6.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/santosfrancisco/gatsby-starter-cv"
-  },
-  "bugs": {
-    "url": "https://github.com/santosfrancisco/gatsby-starter-cv/issues"
-  }
+  "license": "MIT"
 }

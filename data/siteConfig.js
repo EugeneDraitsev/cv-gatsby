@@ -1,92 +1,89 @@
+/* eslint-disable max-len */
+
 module.exports = {
-  siteTitle: 'Hi! I\'m Francisco!',
-  siteDescription: `Create your online curriculum in just a few minutes with this starter`,
-  keyWords: ['gatsbyjs', 'react', 'curriculum'],
-  authorName: 'Francisco Santos',
-  twitterUsername: '_franciscodf',
-  githubUsername: 'santosfrancisco',
-  authorAvatar: '/images/avatar.jpeg',
-  authorDescription: `Developer, passionate about what I do. Always interested in how the sites were made, I started to study HTML by hobby. <br />
-    In 2012 I started working as a support technician and I approached the developers.
-    In 2015, I started to study C # and started to contribute with the team giving maintenance in an application in C # and .NET. <br />
-    I currently work as a frontend developer and mainly work with <strong>Javascript, NodeJS e React.</strong>`,
+  siteTitle: 'Hi! I\'m Eugene!',
+  siteDescription: 'Eugene Draitsev CV',
+  keyWords: ['frontend-developer', 'cv'],
+  authorName: 'Eugene Draitsev',
+  githubUsername: 'EugeneDraitsev',
+  authorAvatar: '/images/avatar.jpg',
+  authorDescription: `I'm software engineer, I like math, science, cats, algorithms and other boring things. I started 
+  work as developer at 2011 and got an systems engineer degree at BSUIR at 2013.  Almost all my working experience 
+  I worked as Fullstack develoer (Node/Java   Frontend). I really like functional programming, serverless stacks and how
+  cloud platforms evolve. I currently work as a fullstack developer and mainly work with TypeScript/GraphQL/React/AWS 
+  (Lambdas/Dynomo etc.).`,
   skills: [
     {
-      name: 'HTML',
-      level: 70
+      name: 'Javascript/Typescript',
+      level: 98,
     },
     {
-      name: 'CSS',
-      level: 60
-    },
-    {
-      name: 'Javascript',
-      level: 50
-    },
-    {
-      name: 'NodeJs',
-      level: 40
+      name: 'HTML/CSS',
+      level: 95,
     },
     {
       name: 'React',
-      level: 60
+      level: 100,
     },
     {
-      name: 'Git',
-      level: 70
-    }
+      name: 'NodeJs',
+      level: 85,
+    },
+    {
+      name: 'AWS Services',
+      level: 65,
+    },
   ],
   jobs: [
     {
-      company: "Lendico",
-      begin: {
-        month: 'apr',
-        year: '2018'
-      },
-      duration: null,
-      occupation: "Frontend developer",
-      description: "I integrate the Frontend team responsible for developing and maintaining the online lending platform."
-  
+      company: 'eBuilder',
+      date: 'Aug 2016 –  Now',
+      duration: '3 years',
+      location: 'Stockholm, Sweden / Minsk, Belarus',
+      occupation: 'Senior Software Engineer',
+      description: 'Architect and develop frontend applications, mobile apps, GraphQl services and AWS infrastructure for that (TypeScript/Node/React)',
     }, {
-      company: "Anapro",
-      begin: {
-        month: 'dec',
-        year: '2016'
-      },
-      duration: '1 yr e 5 mos',
-      occupation: "Fullstack developer",
-      description: "Development and maintenance, corrective and preventive, of web applications for the real estate market."
+      company: 'ISSoft Solutions',
+      date: 'Sep 2013  –  Aug 2016',
+      duration: '3 years',
+      location: 'Minsk, Belarus',
+      occupation: '(Senior) Software Engineer',
+      description: 'Develop web applications (Java backend + Angular Fronted) for customers from USA and Norway. A bit work with AWS services',
     }, {
-      company: "Anapro",
-      begin: {
-        month: 'set',
-        year: '2012'
-      },
-      duration: '4 yrs e 3 mos',
-      occupation: "Support Technician",
-      description: "Responsible for the implementation and parameterization of the system, training and customer support. Acting also in person in real estate launches guaranteeing the success and good use of the tool."
-  
+      company: 'Qulix Systems',
+      date: 'Nov 2012 –  Sep 2013',
+      duration: '10 months',
+      location: 'Minsk, Belarus',
+      occupation: 'Software Engineer',
+      description: 'Support and develop web applications for banks systems (Java + Js/Jquery)',
+    }, {
+      company: 'Epam Systems',
+      date: 'Dec 2011 – Nov 2012',
+      duration: '11 months',
+      location: 'Minsk, Belarus',
+      occupation: 'Junior Software Engineer',
+      description: 'Work with some test project, small bugfixes in web-Java applications. Minor frontend tasks (Java/JQuery/Js)',
     },
-    /* ... */
   ],
   social: {
-    twitter: "https://twitter.com/_franciscodf",
-    linkedin: "https://www.linkedin.com/in/santos-francisco",
-    github: "https://github.com/santosfrancisco",
-    email: "yoshi.df@gmail.com"
+    telergam: 'http://t.me/drrrrrrrr',
+    linkedin: 'https://www.linkedin.com/in/eugenedraitsev/',
+    github: 'https://github.com/EugeneDraitsev',
+    email: 'ddrrai@gmail.com',
   },
-  siteUrl: 'https://santosfrancisco.github.io/gatsbystarter-cv',
-  pathPrefix: '/gatsby-starter-cv', // Note: it must *not* have a trailing slash.
+  siteUrl: 'https://eugenedraitsev.github.io/cv',
+  pathPrefix: '/cv', // Note: it must *not* have a trailing slash.
   siteCover: '/images/cover.jpeg',
   googleAnalyticsId: 'UA-000000000-1',
   background_color: '#ffffff',
-  theme_color: '#25303B',
+  theme_color: '#112B48',
   display: 'minimal-ui',
   icon: 'src/assets/gatsby-icon.png',
+  pdf: 'static/Draitsev, Eugene.pdf',
   headerLinks: [
     {
-      label: 'Francisco Santos',
+      label: 'Eugene Draitsev',
       url: '/',
-    }
-  ]
+    },
+  ],
 }
