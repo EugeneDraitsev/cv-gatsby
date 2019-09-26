@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import styled from 'styled-components'
 import { useAsync } from 'react-use'
 import map from 'lodash/map'
+import isArray from 'lodash/isArray'
 
 import siteConfig from '../../data/siteConfig'
 import { Spinner } from './spinner.component'
@@ -61,7 +62,7 @@ export const Repositories = memo(({ url = githubProfileUrl, className }: Reposit
         </Loading>
       )}
       {!loading && error && <div>{error.message}</div>}
-      {!loading && repositories && map(repositories, (repository) => (
+      {!loading && isArray(repositories) && map(repositories, (repository) => (
         <Repository key={repository.html_url}>
           <TextBlock>
             <Link href={repository.html_url}>
