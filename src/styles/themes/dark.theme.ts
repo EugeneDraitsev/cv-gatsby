@@ -1,4 +1,4 @@
-const PRIMARY = '#3a7c9b'
+const PRIMARY = '#00bcd4'
 const SECONDARY = '#91AFC4'
 export const dark = {
   primary: { main: PRIMARY },

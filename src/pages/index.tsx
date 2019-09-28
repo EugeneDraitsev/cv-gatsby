@@ -20,7 +20,7 @@ const PageContent = styled.div`
 const Avatar = styled(Img)`
   margin: 0 auto 24px;
   border-radius: 50%;
-  box-shadow: 3px 3px 15px 0 ${(p) => p.theme.palette.text.disabled};
+  box-shadow: ${(p) => p.theme.shadows[3]};
 `
 const MainContent = styled.div`
   display: flex;
