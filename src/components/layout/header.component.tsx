@@ -11,7 +11,7 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${(p) => p.theme.palette.primary.main};
+  background-color: ${(p) => p.theme.palette.primary.dark};
   color: #fff;
   z-index: 1;
 `
