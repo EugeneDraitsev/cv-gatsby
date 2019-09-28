@@ -4,7 +4,7 @@ import map from 'lodash/map'
 
 const Bar = styled.div`
   height: 10px;
-  background-color: ${(p) => p.theme.palette.secondary.main};
+  background-color: ${(p) => p.theme.palette.secondary.light};
   padding: 1px;
 `
 const LevelBar = styled.div<{ level: number }>`
