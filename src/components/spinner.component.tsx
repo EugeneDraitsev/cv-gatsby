@@ -24,14 +24,12 @@ const spinnerDash = keyframes`
     stroke-dashoffset: -124px;
   }
 `
-
 const Svg = styled.svg`
   animation: ${rotate360} 2s linear infinite;
   height: 100%;
   transform-origin: center center;
   width: 100%;
 `
-
 const Circle = styled.circle`
   animation: ${spinnerDash} 1.5s ease-in-out infinite;
   stroke-dasharray: 1,200;

@@ -35,7 +35,7 @@ export const HeaderLayout = ({ title, heroImg, heroTitle, description, keywords,
   <>
     <Head title={title} description={description} keywords={keywords} />
     <Header />
-    {heroImg && <Hero heroImg={heroImg} title={heroTitle || title} />}
+    {heroImg && <Hero heroImg={heroImg} title={heroTitle} />}
     <Content>{children}</Content>
   </>
 )

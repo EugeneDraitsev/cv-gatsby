@@ -8,7 +8,7 @@ const MainTitle = styled.h1`
   text-align: center;
   font-size: 3rem;
 `
-const Icon = styled.div`
+const ImageWrapper = styled.div`
   width: 150px;
   margin: 0 auto;
 `
@@ -20,9 +20,9 @@ export default function NotFoundPage() {
   return (
     <HeaderLayout title="Page Not Found" heroImg="/images/404.jpeg" heroTitle="404">
       <MainTitle>404 Page Not Found</MainTitle>
-      <Icon>
+      <ImageWrapper>
         <img src="/images/ufo-and-cow.svg" alt="ufo and cow" />
-      </Icon>
+      </ImageWrapper>
       <Text>
         Looks like you&apos;ve followed a broken link or entered a URL that
         doesn&apos;t exist on this site.

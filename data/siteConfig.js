@@ -84,8 +84,12 @@ module.exports = {
   pdf: 'static/eugene-draitsev.pdf',
   headerLinks: [
     {
-      label: 'Eugene Draitsev',
+      label: 'Home',
       url: '/',
+    },
+    {
+      label: 'About',
+      url: '/about',
     },
   ],
 }

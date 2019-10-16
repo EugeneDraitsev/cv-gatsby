@@ -32,7 +32,7 @@ const HeroTitle = styled.h1`
 `
 
 interface HeroProps {
-  title: string
+  title?: string
   heroImg?: string
   className?: string
 }
