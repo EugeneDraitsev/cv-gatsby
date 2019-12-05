@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useAsync } from 'react-use'
+import { Skeleton } from '@material-ui/lab'
 
 import { HeaderLayout } from '../components/layout/header-layout.component'
 import siteConfig from '../../data/siteConfig'
@@ -8,10 +10,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`
-const Video = styled.video`
-  max-width: 100%;
-  margin: 20px 0 0 0;
 `
 const MainTitle = styled.h1`
   line-height: 1;
@@ -26,8 +24,22 @@ const Caption = styled.p`
   font-size: 12px;
   text-align: center;
 `
+const LighthouseContainer = styled.div`
+  height: 284px;
+`
+const Iframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #F6F6F6;
+`
 
-export default function NotFoundPage() {
+export default () => {
+  const { loading, value } = useAsync(async () => {
+    const result = await fetch('/lighthouse-report.data')
+    return result.text()
+  })
+
   return (
     <HeaderLayout title="About" heroImg={siteConfig.siteCover}>
       <Wrapper>
@@ -37,11 +49,13 @@ export default function NotFoundPage() {
           It&apos;s first of all an example of react-based app with fully passed google audit*.
           In future I&apos;m planning to convert it to kind of personal blog, but for now that&apos;s just an CV.
         </Text>
-        <Video src="/google_audit.mp4" autoPlay loop muted>
-          <track kind="captions" />
-        </Video>
+        <LighthouseContainer>
+          {loading && <Skeleton variant="rect" height={284} />}
+          {!loading && value && <Iframe srcDoc={value} />}
+        </LighthouseContainer>
+
         <Caption>
-          *Tested in Chrome Canary 79.0.3943.0
+          *Tested in Chrome 78.0.3904.108
         </Caption>
       </Wrapper>
     </HeaderLayout>
