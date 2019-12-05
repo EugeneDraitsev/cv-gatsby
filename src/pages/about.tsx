@@ -51,9 +51,8 @@ export default () => {
         </Text>
         <LighthouseContainer>
           {loading && <Skeleton variant="rect" height={284} />}
-          {!loading && value && <Iframe srcDoc={value} />}
+          {!loading && value && <Iframe srcDoc={value} title="Lighthouse results" />}
         </LighthouseContainer>
-
         <Caption>
           *Tested in Chrome 78.0.3904.108
         </Caption>
