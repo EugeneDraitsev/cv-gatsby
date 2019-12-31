@@ -32,7 +32,6 @@ module.exports = {
         icon: config.icon,
       },
     },
-    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-material-ui',
       options: {
@@ -41,6 +40,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',
