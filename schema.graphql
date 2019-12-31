@@ -280,7 +280,7 @@ type FileGroupConnection {
 
 type ImageSharp implements Node {
   children: [Node!]!
-  fixed(background: String = "rgba(0,0,0,1)", base64Width: Int, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, pngCompressionSpeed: Int = 4, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, toFormatBase64: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, width: Int): ImageSharpFixed
+  fixed(background: String = "rgba(0,0,0,1)", base64Width: Int, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, jpegQuality: Int, pngCompressionSpeed: Int = 4, pngQuality: Int, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, toFormatBase64: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, webpQuality: Int, width: Int): ImageSharpFixed
   fluid(
     background: String = "rgba(0,0,0,1)",
     base64Width: Int,
@@ -289,9 +289,11 @@ type ImageSharp implements Node {
     fit: ImageFit = COVER,
     grayscale: Boolean = false,
     jpegProgressive: Boolean = true,
+    jpegQuality: Int,
     maxHeight: Int,
     maxWidth: Int,
     pngCompressionSpeed: Int = 4,
+    pngQuality: Int,
     quality: Int,
     rotate: Int = 0,
     sizes: String = "",
@@ -300,14 +302,15 @@ type ImageSharp implements Node {
     toFormat: ImageFormat = NO_CHANGE,
     toFormatBase64: ImageFormat = NO_CHANGE,
     traceSVG: Potrace,
-    trim: Float = 0.0
+    trim: Float = 0.0,
+    webpQuality: Int
   ): ImageSharpFluid
   id: ID!
   internal: Internal!
   original: ImageSharpOriginal
   parent: Node
-  resize(background: String = "rgba(0,0,0,1)", base64: Boolean = false, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, pngCompressionLevel: Int = 9, pngCompressionSpeed: Int = 4, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, width: Int): ImageSharpResize
-  resolutions(background: String = "rgba(0,0,0,1)", base64Width: Int, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, pngCompressionSpeed: Int = 4, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, toFormatBase64: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, width: Int): ImageSharpResolutions @deprecated(reason : "Resolutions was deprecated in Gatsby v2. It's been renamed to \"fixed\" https:\/\/example.com\/write-docs-and-fix-this-example-link")
+  resize(background: String = "rgba(0,0,0,1)", base64: Boolean = false, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, jpegQuality: Int, pngCompressionLevel: Int = 9, pngCompressionSpeed: Int = 4, pngQuality: Int, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, webpQuality: Int, width: Int): ImageSharpResize
+  resolutions(background: String = "rgba(0,0,0,1)", base64Width: Int, cropFocus: ImageCropFocus = ATTENTION, duotone: DuotoneGradient, fit: ImageFit = COVER, grayscale: Boolean = false, height: Int, jpegProgressive: Boolean = true, jpegQuality: Int, pngCompressionSpeed: Int = 4, pngQuality: Int, quality: Int, rotate: Int = 0, toFormat: ImageFormat = NO_CHANGE, toFormatBase64: ImageFormat = NO_CHANGE, traceSVG: Potrace, trim: Float = 0.0, webpQuality: Int, width: Int): ImageSharpResolutions @deprecated(reason : "Resolutions was deprecated in Gatsby v2. It's been renamed to \"fixed\" https:\/\/example.com\/write-docs-and-fix-this-example-link")
   sizes(
     background: String = "rgba(0,0,0,1)",
     base64Width: Int,
@@ -316,9 +319,11 @@ type ImageSharp implements Node {
     fit: ImageFit = COVER,
     grayscale: Boolean = false,
     jpegProgressive: Boolean = true,
+    jpegQuality: Int,
     maxHeight: Int,
     maxWidth: Int,
     pngCompressionSpeed: Int = 4,
+    pngQuality: Int,
     quality: Int,
     rotate: Int = 0,
     sizes: String = "",
@@ -327,7 +332,8 @@ type ImageSharp implements Node {
     toFormat: ImageFormat = NO_CHANGE,
     toFormatBase64: ImageFormat = NO_CHANGE,
     traceSVG: Potrace,
-    trim: Float = 0.0
+    trim: Float = 0.0,
+    webpQuality: Int
   ): ImageSharpSizes @deprecated(reason : "Sizes was deprecated in Gatsby v2. It's been renamed to \"fluid\" https:\/\/example.com\/write-docs-and-fix-this-example-link")
 }
 
@@ -615,16 +621,56 @@ type SitePluginPackageJsonPeerDependencies {
 }
 
 type SitePluginPluginOptions {
+  anonymize: Boolean
   background_color: String
   display: String
+  env: SitePluginPluginOptionsEnv
+  fonts: [SitePluginPluginOptionsFonts]
+  head: Boolean
+  host: String
   icon: String
   name: String
   path: String
   pathCheck: Boolean
+  respectDNT: Boolean
   short_name: String
+  sitemap: String
   start_url: String
+  stylesProvider: SitePluginPluginOptionsStylesProvider
   theme_color: String
   trackingId: String
+}
+
+type SitePluginPluginOptionsEnv {
+  development: SitePluginPluginOptionsEnvDevelopment
+  production: SitePluginPluginOptionsEnvProduction
+}
+
+type SitePluginPluginOptionsEnvDevelopment {
+  policy: [SitePluginPluginOptionsEnvDevelopmentPolicy]
+}
+
+type SitePluginPluginOptionsEnvDevelopmentPolicy {
+  disallow: [String]
+  userAgent: String
+}
+
+type SitePluginPluginOptionsEnvProduction {
+  policy: [SitePluginPluginOptionsEnvProductionPolicy]
+}
+
+type SitePluginPluginOptionsEnvProductionPolicy {
+  allow: String
+  userAgent: String
+}
+
+type SitePluginPluginOptionsFonts {
+  family: String
+  variants: [String]
+}
+
+type SitePluginPluginOptionsStylesProvider {
+  injectFirst: Boolean
 }
 
 type SiteSiteMetadata {
@@ -636,12 +682,11 @@ type SiteSiteMetadata {
   description: String
   display: String
   githubUsername: String
-  googleAnalyticsId: String
   headerLinks: [SiteSiteMetadataHeaderLinks]
   icon: String
   jobs: [SiteSiteMetadataJobs]
   keyWords: [String]
-  pathPrefix: String
+  pdf: String
   siteCover: String
   siteDescription: String
   siteTitle: String
@@ -650,7 +695,6 @@ type SiteSiteMetadata {
   social: SiteSiteMetadataSocial
   theme_color: String
   title: String
-  twitterUsername: String
 }
 
 type SiteSiteMetadataHeaderLinks {
@@ -659,25 +703,13 @@ type SiteSiteMetadataHeaderLinks {
 }
 
 type SiteSiteMetadataJobs {
-  begin: SiteSiteMetadataJobsBegin
   company: String
+  companyIcon: String
+  date: String
   description: String
   duration: String
+  location: String
   occupation: String
-}
-
-type SiteSiteMetadataJobsBegin {
-  month: String
-  year(
-    #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
-    difference: String,
-    #Format the date using Moment.js' date tokens, e.g. `date(formatString: \"YYYY MMMM DD\")`. See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens.
-    formatString: String,
-    #Returns a string generated with Moment.js' `fromNow` function
-    fromNow: Boolean,
-    #Configures the locale Moment.js will use to format the date.
-    locale: String
-  ): Date
 }
 
 type SiteSiteMetadataSkills {
@@ -863,7 +895,7 @@ enum FileFieldsEnum {
   childImageSharp___fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   childImageSharp___fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   childImageSharp___fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-  childImageSharp___id
+  childImageSharp___id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   childImageSharp___internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   childImageSharp___internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   childImageSharp___internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1117,7 +1149,7 @@ enum ImageSharpFieldsEnum {
   fluid___srcSetWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   fluid___srcWebp @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   fluid___tracedSVG @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
-  id
+  id @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   internal___content @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   internal___contentDigest @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
   internal___description @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1306,20 +1338,20 @@ enum SiteFieldsEnum {
   siteMetadata___description
   siteMetadata___display
   siteMetadata___githubUsername
-  siteMetadata___googleAnalyticsId
   siteMetadata___headerLinks
   siteMetadata___headerLinks___label
   siteMetadata___headerLinks___url
   siteMetadata___icon
   siteMetadata___jobs
-  siteMetadata___jobs___begin___month
-  siteMetadata___jobs___begin___year
   siteMetadata___jobs___company
+  siteMetadata___jobs___companyIcon
+  siteMetadata___jobs___date
   siteMetadata___jobs___description
   siteMetadata___jobs___duration
+  siteMetadata___jobs___location
   siteMetadata___jobs___occupation
   siteMetadata___keyWords
-  siteMetadata___pathPrefix
+  siteMetadata___pdf
   siteMetadata___siteCover
   siteMetadata___siteDescription
   siteMetadata___siteTitle
@@ -1333,7 +1365,6 @@ enum SiteFieldsEnum {
   siteMetadata___social___telergam
   siteMetadata___theme_color
   siteMetadata___title
-  siteMetadata___twitterUsername
 }
 
 enum SitePageFieldsEnum {
@@ -1488,14 +1519,23 @@ enum SitePageFieldsEnum {
   pluginCreator___parent___parent___children
   pluginCreator___parent___parent___id
   pluginCreator___pluginFilepath
+  pluginCreator___pluginOptions___anonymize
   pluginCreator___pluginOptions___background_color
   pluginCreator___pluginOptions___display
+  pluginCreator___pluginOptions___fonts
+  pluginCreator___pluginOptions___fonts___family
+  pluginCreator___pluginOptions___fonts___variants
+  pluginCreator___pluginOptions___head
+  pluginCreator___pluginOptions___host
   pluginCreator___pluginOptions___icon
   pluginCreator___pluginOptions___name
   pluginCreator___pluginOptions___path
   pluginCreator___pluginOptions___pathCheck
+  pluginCreator___pluginOptions___respectDNT
   pluginCreator___pluginOptions___short_name
+  pluginCreator___pluginOptions___sitemap
   pluginCreator___pluginOptions___start_url
+  pluginCreator___pluginOptions___stylesProvider___injectFirst
   pluginCreator___pluginOptions___theme_color
   pluginCreator___pluginOptions___trackingId
   pluginCreator___resolve
@@ -1610,14 +1650,25 @@ enum SitePluginFieldsEnum {
   parent___parent___parent___children
   parent___parent___parent___id
   pluginFilepath
+  pluginOptions___anonymize
   pluginOptions___background_color
   pluginOptions___display
+  pluginOptions___env___development___policy
+  pluginOptions___env___production___policy
+  pluginOptions___fonts
+  pluginOptions___fonts___family
+  pluginOptions___fonts___variants
+  pluginOptions___head
+  pluginOptions___host
   pluginOptions___icon
   pluginOptions___name
   pluginOptions___path
   pluginOptions___pathCheck
+  pluginOptions___respectDNT
   pluginOptions___short_name
+  pluginOptions___sitemap
   pluginOptions___start_url
+  pluginOptions___stylesProvider___injectFirst
   pluginOptions___theme_color
   pluginOptions___trackingId
   resolve
@@ -1980,17 +2031,69 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
   elemMatch: SitePluginPackageJsonPeerDependenciesFilterInput
 }
 
+input SitePluginPluginOptionsEnvDevelopmentFilterInput {
+  policy: SitePluginPluginOptionsEnvDevelopmentPolicyFilterListInput
+}
+
+input SitePluginPluginOptionsEnvDevelopmentPolicyFilterInput {
+  disallow: StringQueryOperatorInput
+  userAgent: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsEnvDevelopmentPolicyFilterListInput {
+  elemMatch: SitePluginPluginOptionsEnvDevelopmentPolicyFilterInput
+}
+
+input SitePluginPluginOptionsEnvFilterInput {
+  development: SitePluginPluginOptionsEnvDevelopmentFilterInput
+  production: SitePluginPluginOptionsEnvProductionFilterInput
+}
+
+input SitePluginPluginOptionsEnvProductionFilterInput {
+  policy: SitePluginPluginOptionsEnvProductionPolicyFilterListInput
+}
+
+input SitePluginPluginOptionsEnvProductionPolicyFilterInput {
+  allow: StringQueryOperatorInput
+  userAgent: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsEnvProductionPolicyFilterListInput {
+  elemMatch: SitePluginPluginOptionsEnvProductionPolicyFilterInput
+}
+
 input SitePluginPluginOptionsFilterInput {
+  anonymize: BooleanQueryOperatorInput
   background_color: StringQueryOperatorInput
   display: StringQueryOperatorInput
+  env: SitePluginPluginOptionsEnvFilterInput
+  fonts: SitePluginPluginOptionsFontsFilterListInput
+  head: BooleanQueryOperatorInput
+  host: StringQueryOperatorInput
   icon: StringQueryOperatorInput
   name: StringQueryOperatorInput
   path: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
+  respectDNT: BooleanQueryOperatorInput
   short_name: StringQueryOperatorInput
+  sitemap: StringQueryOperatorInput
   start_url: StringQueryOperatorInput
+  stylesProvider: SitePluginPluginOptionsStylesProviderFilterInput
   theme_color: StringQueryOperatorInput
   trackingId: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsFontsFilterInput {
+  family: StringQueryOperatorInput
+  variants: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsFontsFilterListInput {
+  elemMatch: SitePluginPluginOptionsFontsFilterInput
+}
+
+input SitePluginPluginOptionsStylesProviderFilterInput {
+  injectFirst: BooleanQueryOperatorInput
 }
 
 input SitePluginSortInput {
@@ -2007,12 +2110,11 @@ input SiteSiteMetadataFilterInput {
   description: StringQueryOperatorInput
   display: StringQueryOperatorInput
   githubUsername: StringQueryOperatorInput
-  googleAnalyticsId: StringQueryOperatorInput
   headerLinks: SiteSiteMetadataHeaderLinksFilterListInput
   icon: StringQueryOperatorInput
   jobs: SiteSiteMetadataJobsFilterListInput
   keyWords: StringQueryOperatorInput
-  pathPrefix: StringQueryOperatorInput
+  pdf: StringQueryOperatorInput
   siteCover: StringQueryOperatorInput
   siteDescription: StringQueryOperatorInput
   siteTitle: StringQueryOperatorInput
@@ -2021,7 +2123,6 @@ input SiteSiteMetadataFilterInput {
   social: SiteSiteMetadataSocialFilterInput
   theme_color: StringQueryOperatorInput
   title: StringQueryOperatorInput
-  twitterUsername: StringQueryOperatorInput
 }
 
 input SiteSiteMetadataHeaderLinksFilterInput {
@@ -2033,16 +2134,13 @@ input SiteSiteMetadataHeaderLinksFilterListInput {
   elemMatch: SiteSiteMetadataHeaderLinksFilterInput
 }
 
-input SiteSiteMetadataJobsBeginFilterInput {
-  month: StringQueryOperatorInput
-  year: DateQueryOperatorInput
-}
-
 input SiteSiteMetadataJobsFilterInput {
-  begin: SiteSiteMetadataJobsBeginFilterInput
   company: StringQueryOperatorInput
+  companyIcon: StringQueryOperatorInput
+  date: StringQueryOperatorInput
   description: StringQueryOperatorInput
   duration: StringQueryOperatorInput
+  location: StringQueryOperatorInput
   occupation: StringQueryOperatorInput
 }
 

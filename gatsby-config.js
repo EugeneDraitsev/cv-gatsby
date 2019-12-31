@@ -33,6 +33,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-material-ui',
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -54,10 +62,16 @@ module.exports = {
         sitemap: 'https://eugene-draitsev.surge.sh//sitemap.xml',
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+            policy: [{
+              userAgent: '*',
+              disallow: ['/'],
+            }],
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }],
+            policy: [{
+              userAgent: '*',
+              allow: '/',
+            }],
           },
         },
       },

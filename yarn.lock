@@ -2127,7 +2127,7 @@ auto-bind@^2.0.0:
   dependencies:
     "@types/react" "^16.8.12"
 
-autoprefixer@^9.7.2:
+autoprefixer@^9.6.1, autoprefixer@^9.7.2:
   version "9.7.3"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.7.3.tgz#fd42ed03f53de9beb4ca0d61fb4f7268a9bb50b4"
   integrity sha512-8T5Y1C5Iyj6PgkPSFd0ODvK9DIleuPKUPYniNxybS47g2k2wFgLZ46lGQHlBuGKIAEV8fbCDfKCCRS1tvOgc3Q==
@@ -5674,6 +5674,15 @@ gatsby-plugin-manifest@2.2.31:
     gatsby-core-utils "^1.0.22"
     semver "^5.7.1"
     sharp "^0.23.3"
+
+gatsby-plugin-material-ui@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-2.1.6.tgz#7664f7b3027d68f2fabc2a1d5e9cf44a84103caa"
+  integrity sha512-6cysXuwRrrN+NHe9K77wbONqyH4KnS/smY2urx8+OlHUTa8JMG6tUUxiNNHM0HU7GjAu+kFoEB0vgWRWpQgKew==
+  dependencies:
+    autoprefixer "^9.6.1"
+    clean-css "^4.2.1"
+    postcss "^7.0.17"
 
 gatsby-plugin-offline@3.0.27:
   version "3.0.27"
@@ -10049,6 +10058,15 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.5:
   version "7.0.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.18.tgz#4b9cda95ae6c069c67a4d933029eddd4838ac233"
   integrity sha512-/7g1QXXgegpF+9GJj4iN7ChGF40sYuGYJ8WZu8DZWnmhQ/G36hfdk3q9LBJmoK+lZ+yzZ5KYpOoxq7LF1BxE8g==
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
+postcss@^7.0.17:
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.26.tgz#5ed615cfcab35ba9bbb82414a4fa88ea10429587"
+  integrity sha512-IY4oRjpXWYshuTDFxMVkJDtWIk2LhsTlu8bZnbEJA4+bYT16Lvpo8Qv6EvDumhYRgzjZl489pmsY3qVgJQ08nA==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"

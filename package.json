@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "CV based on GatsbyJS",
   "author": "Eugene Draitsev <ddrrai@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
@@ -44,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "gatsby-plugin-google-analytics": "2.1.29",
     "gatsby-plugin-manifest": "2.2.31",
+    "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-offline": "3.0.27",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "3.1.16",
@@ -55,6 +57,5 @@
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "2.3.7",
     "typescript": "^3.7.3"
-  },
-  "license": "MIT"
+  }
 }
