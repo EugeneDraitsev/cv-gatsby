@@ -1,10 +1,9 @@
-import React, { memo, useCallback, useMemo } from 'react'
+import React, { memo, useMemo } from 'react'
 import { ThemeProvider as StyledProvider } from 'styled-components'
 import createMuiTheme, { Theme } from '@material-ui/core/styles/createMuiTheme'
 import { Helmet } from 'react-helmet'
 import { ThemeProvider as MuiProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
-import { useLocalStorage } from 'react-use'
 import { get, includes } from 'lodash-es'
 
 
@@ -20,7 +19,6 @@ interface ThemeProviderProps {
 interface ThemeState {
   theme: Theme
   themeType: ThemeType
-  toggleTheme: () => void
 }
 
 const themes = ['light', 'dark']
@@ -28,7 +26,7 @@ const themes = ['light', 'dark']
 const ThemeContext = React.createContext({} as ThemeState)
 
 const ThemeProvider = memo(({ children }: ThemeProviderProps) => {
-  const [themeType, setTheme] = useLocalStorage<ThemeType>('cv-theme', 'light')
+  const themeType = 'dark'
   const styles = get(themesStyles, `[${themeType}]`)
 
   const theme = useMemo(() => createMuiTheme({
@@ -59,12 +57,8 @@ const ThemeProvider = memo(({ children }: ThemeProviderProps) => {
     },
   }), [styles, themeType])
 
-  const toggleTheme = useCallback(() => {
-    setTheme((current: ThemeType) => (current === 'dark' ? 'light' : 'dark'))
-  }, [setTheme])
-
   return (
-    <ThemeContext.Provider value={{ theme, themeType, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, themeType }}>
       <Helmet>
         <meta
           name="viewport"

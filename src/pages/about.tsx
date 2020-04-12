@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useAsync } from 'react-use'
 import { Skeleton } from '@material-ui/lab'
 
-import { HeaderLayout } from '../components/layout/header-layout.component'
+import { HeaderLayout } from '../components'
 
 const Wrapper = styled.div`
   display: flex;

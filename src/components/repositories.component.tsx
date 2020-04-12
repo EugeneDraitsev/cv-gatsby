@@ -30,7 +30,7 @@ const Description = styled.div`
   padding: 5px 0;
 `
 const Stars = styled.div`
-  color: ${(p) => p.theme.palette.primary.main};
+  color: ${(p) => p.theme.palette.primary.light};
   min-width: 30px;
   margin-left: 5px;
 `

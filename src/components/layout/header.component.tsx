@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { map } from 'lodash-es'
 
-import { ThemeSwitcher } from '../theme-switcher.component'
 import siteConfig from '../../../data/siteConfig'
 
 const HeaderWrapper = styled.header`
@@ -11,7 +10,7 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${(p) => p.theme.palette.primary.dark};
+  background-color: transparent;
   color: #fff;
   z-index: 1;
 `
@@ -32,11 +31,6 @@ const HeaderLink = styled(Link)`
   padding: 0 20px;
   font-weight: 500;
 `
-const HeaderIcons = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 5px 20px 0 0;
-`
 
 export const Header = () => {
   const { headerLinks } = siteConfig
@@ -51,9 +45,6 @@ export const Header = () => {
             </HeaderLink>
           ))}
         </HeaderLinkGroup>
-        <HeaderIcons>
-          <ThemeSwitcher />
-        </HeaderIcons>
       </HeaderNav>
     </HeaderWrapper>
   )

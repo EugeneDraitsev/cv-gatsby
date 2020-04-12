@@ -12,16 +12,18 @@ const Wrapper = styled.div`
   color: white;
   .vertical-timeline-element-date {
     color: ${(p) => p.theme.palette.text.primary};
+    opacity: 1;
     margin: 0 10px;
   }
   .vertical-timeline :before {
-    background: ${(p) => p.theme.palette.secondary.main};
+    background: ${(p) => p.theme.palette.secondary.dark};
   }
   .vertical-timeline-element-icon {
-    box-shadow: 0 0 0 4px ${(p) => p.theme.palette.secondary.main};;
+    box-shadow: 0 0 0 4px ${(p) => p.theme.palette.secondary.main};
   }
 `
-const Item = styled(VerticalTimelineElement as any)``
+const Item = styled(VerticalTimelineElement as any)`
+`
 const Title = styled.h3`
   margin: 0 0 10px 0;
 `
