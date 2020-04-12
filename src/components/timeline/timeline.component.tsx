@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
-import map from 'lodash/map'
+import { map } from 'lodash-es'
 import 'react-vertical-timeline-component/style.min.css'
 
 import siteConfig from '../../../data/siteConfig'

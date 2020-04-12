@@ -6,11 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Mail, GitHub, Linkedin } from 'react-feather'
 
 import siteConfig from '../../data/siteConfig'
-import { HeaderLayout } from '../components/layout/header-layout.component'
-import { About } from '../components/about.component'
-import { Skills } from '../components/skills.component'
-import { Timeline } from '../components/timeline'
-import { Repositories } from '../components/repositories.component'
+import { About, Skills, Repositories, Timeline, HeaderLayout } from '../components'
 import { getTransition } from '../styles'
 
 const PageContent = styled.div`
@@ -71,7 +67,7 @@ export default function Home() {
   const data = useStaticQuery(query)
 
   return (
-    <HeaderLayout title="CV" heroImg={siteConfig.siteCover} heroTitle="Hi! I'm Eugene!" keywords={siteConfig.keyWords}>
+    <HeaderLayout title="CV">
       <PageContent>
         <MainContent>
           <Avatar fixed={data.file.childImageSharp.fixed} />

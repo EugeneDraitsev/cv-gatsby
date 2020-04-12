@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { Header } from './header.component'
 import { Head } from '../head.component'
-import { Hero } from '../hero.component'
+import { GalaxyHeader } from '../galaxy.component'
 
 const Content = styled.main`
   position: relative;
@@ -25,17 +25,15 @@ const Content = styled.main`
 interface LayoutProps {
   title: string
   description?: string
-  heroImg?: string
-  heroTitle?: string
   keywords?: string[]
   children: JSX.Element | JSX.Element []
 }
 
-export const HeaderLayout = ({ title, heroImg, heroTitle, description, keywords, children }: LayoutProps) => (
+export const HeaderLayout = ({ title, description, keywords, children }: LayoutProps) => (
   <>
     <Head title={title} description={description} keywords={keywords} />
     <Header />
-    {heroImg && <Hero heroImg={heroImg} title={heroTitle} />}
+    <GalaxyHeader />
     <Content>{children}</Content>
   </>
 )

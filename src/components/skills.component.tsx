@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import map from 'lodash/map'
+import { map } from 'lodash-es'
+
 
 const Bar = styled.div`
   height: 10px;

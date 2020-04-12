@@ -1,8 +1,7 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
 import { useAsync } from 'react-use'
-import map from 'lodash/map'
-import isArray from 'lodash/isArray'
+import { map, isArray } from 'lodash-es'
 
 import siteConfig from '../../data/siteConfig'
 import { Spinner } from './spinner.component'

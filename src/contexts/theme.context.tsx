@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet'
 import { ThemeProvider as MuiProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 import { useLocalStorage } from 'react-use'
-import get from 'lodash/get'
-import includes from 'lodash/includes'
+import { get, includes } from 'lodash-es'
+
 
 import * as themesStyles from '../styles/themes'
 import GlobalStyles from '../styles/global.styles'
@@ -35,6 +35,27 @@ const ThemeProvider = memo(({ children }: ThemeProviderProps) => {
     palette: {
       type: includes(themes, themeType) ? themeType : 'light',
       ...styles,
+    },
+    typography: {
+      fontFamily: ['Roboto Mono', 'Lucida Console', '"Courier New"', 'monospace'].join(','),
+      caption: {
+        fontSize: '16px',
+        lineHeight: '20px',
+        color: 'rgba(0, 0, 0, 0.6)',
+      },
+      h2: {
+        fontWeight: 'bold',
+        fontSize: '32px',
+        textTransform: 'uppercase',
+      },
+      h4: {
+        fontWeight: 500,
+        fontSize: '32px',
+      },
+      h5: {
+        fontWeight: 'bold',
+        fontSize: '24px',
+      },
     },
   }), [styles, themeType])
 

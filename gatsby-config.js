@@ -81,7 +81,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: 'Roboto',
+            family: 'Roboto Mono',
             variants: ['300', '400', '500', '700'],
           },
         ],

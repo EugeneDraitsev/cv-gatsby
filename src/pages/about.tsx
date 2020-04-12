@@ -4,7 +4,6 @@ import { useAsync } from 'react-use'
 import { Skeleton } from '@material-ui/lab'
 
 import { HeaderLayout } from '../components/layout/header-layout.component'
-import siteConfig from '../../data/siteConfig'
 
 const Wrapper = styled.div`
   display: flex;
@@ -41,7 +40,7 @@ export default () => {
   })
 
   return (
-    <HeaderLayout title="About" heroImg={siteConfig.siteCover}>
+    <HeaderLayout title="About">
       <Wrapper>
         <MainTitle>About</MainTitle>
         <Text>

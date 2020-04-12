@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import map from 'lodash/map'
+import { map } from 'lodash-es'
 
 import { ThemeSwitcher } from '../theme-switcher.component'
 import siteConfig from '../../../data/siteConfig'
