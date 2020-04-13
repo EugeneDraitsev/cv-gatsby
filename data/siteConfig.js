@@ -78,7 +78,7 @@ module.exports = {
   siteUrl: 'https://eugene-draitsev.netlify.com/',
   siteCover: '/images/cover.jpeg',
   background_color: '#ffffff',
-  theme_color: '#112B48',
+  theme_color: '#000',
   display: 'minimal-ui',
   icon: 'src/assets/gatsby-icon.png',
   pdf: 'static/eugene-draitsev.pdf',
