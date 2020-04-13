@@ -7,11 +7,11 @@ module.exports = {
   authorName: 'Eugene Draitsev',
   githubUsername: 'EugeneDraitsev',
   authorAvatar: '/images/avatar.jpg',
-  authorDescription: `I'm software engineer, I like math, science, cats, algorithms and other boring things. I started 
-  work as developer at 2011 and got an systems engineer degree at BSUIR at 2013.  Almost all my working experience 
-  I worked as Fullstack develoer (Node/Java   Frontend). I really like functional programming, serverless stacks and how
-  cloud platforms evolve. I currently work as a fullstack developer and mainly work with TypeScript/GraphQL/React/AWS 
-  (Lambdas/Dynomo etc.).`,
+  authorDescription: `My name is Eugene and I'm software engineer. I like math, science, cats, algorithms and other 
+  boring things. I started work as developer at 2011 and got an systems engineer degree at BSUIR at 2013. 
+  I've worked almost all my experience as a fullstack developer (Node/Java + Frontend). 
+  I really like functional programming, serverless approach and how cloud platforms evolve. 
+  I currently work as a fullstack developer and mainly work with React, TypeScript, GraphQL and AWS`,
   skills: [
     {
       name: 'Javascript/Typescript',
@@ -77,8 +77,8 @@ module.exports = {
   },
   siteUrl: 'https://eugene-draitsev.netlify.com/',
   siteCover: '/images/cover.jpeg',
-  background_color: '#ffffff',
-  theme_color: '#000',
+  background_color: '#000',
+  theme_color: '#424242',
   display: 'minimal-ui',
   icon: 'src/assets/gatsby-icon.png',
   pdf: 'static/eugene-draitsev.pdf',

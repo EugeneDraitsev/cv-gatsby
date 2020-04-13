@@ -88,13 +88,13 @@ export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      addStars(containerRef.current, (containerRef.current?.getBoundingClientRect().width ?? 500) / 3, 5, true)
+      addStars(containerRef.current, Math.min(window.innerWidth, 2000) / 3, 5, true)
     }
   }, [containerRef])
 
   useEffect(() => {
     if (galaxyRef.current) {
-      addStars(galaxyRef.current, galaxyRef.current?.getBoundingClientRect().width ?? 500, 3)
+      addStars(galaxyRef.current, Math.min(window.innerWidth, 2000), 3)
     }
   }, [galaxyRef])
 
