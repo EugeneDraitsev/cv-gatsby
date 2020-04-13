@@ -10,29 +10,45 @@ module.exports = {
   authorDescription: `My name is Eugene and I'm software engineer. I like math, science, cats, algorithms and other 
   boring things. I started work as developer at 2011 and got an systems engineer degree at BSUIR at 2013. 
   I've worked almost all my experience as a fullstack developer (Node/Java + Frontend). 
-  I really like functional programming, serverless approach and how cloud platforms evolve. 
+  I really like functional programming, serverless approach and cloud platforms. 
   I currently work as a fullstack developer and mainly work with React, TypeScript, GraphQL and AWS`,
+  details: {
+    name: 'Eugene Draitsev',
+    age: 29,
+    position: 'Senior Fullstack Engenier',
+    location: 'Stockholm, Sweden',
+  },
   skills: [
     {
-      name: 'Javascript/Typescript',
-      level: 98,
+      name: 'Programming Languages',
+      data: [
+        { name: 'Javascript', value: 5 },
+        { name: 'Typescript', value: 4.5 },
+        { name: 'HTML', value: 5 },
+        { name: 'CSS', value: 5 },
+        { name: 'Java', value: 3.5 },
+        { name: 'Swift', value: 3 },
+      ],
     },
     {
-      name: 'HTML/CSS',
-      level: 95,
+      name: 'Tools & Technologies',
+      data: [
+        { name: 'React', value: 5 },
+        { name: 'ReactNative', value: 4.5 },
+        { name: 'AWS', value: 4 },
+        { name: 'Node', value: 4 },
+        { name: 'D3', value: 4.5 },
+        { name: 'GraphQL', value: 4.5 },
+        { name: 'Angular', value: 3.5 },
+        { name: 'Vue', value: 3.5 },
+        { name: 'SQLDatabases', value: 3.5 },
+        { name: 'NonSQLDatabases', value: 3.5 },
+      ],
     },
-    {
-      name: 'React',
-      level: 100,
-    },
-    {
-      name: 'NodeJs',
-      level: 85,
-    },
-    {
-      name: 'AWS Services',
-      level: 65,
-    },
+  ],
+  languages: [
+    { name: 'Russian', value: 5 },
+    { name: 'English', value: 4 },
   ],
   jobs: [
     {
@@ -67,6 +83,17 @@ module.exports = {
       location: 'Minsk, Belarus',
       occupation: 'Junior Software Engineer',
       description: 'Work with some test project, small bugfixes in web-Java applications. Minor frontend tasks (Java/JQuery/Js)',
+    },
+  ],
+  education: [
+    {
+      name: 'Belarusian State University of Informatics and Radioelectronics',
+      icon: 'bsuir',
+      startYear: 2008,
+      endYear: 2013,
+      specialization: 'System Engineer',
+      degreeLevel: 'Specialist/Master in Computer Science',
+      location: 'Minsk, Belarus',
     },
   ],
   social: {

@@ -4,11 +4,9 @@ import { times, random, identity, chunk } from 'lodash-es'
 
 const rotate = keyframes`
   from {
-    -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg);
   }
   to {
-    -webkit-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
   }
 `
@@ -45,6 +43,7 @@ const Galaxy = styled.div`
   animation: ${rotate} 300s linear infinite, ${fadeIn} 2500ms ease-in;
   border-radius: 50%;
   overflow: hidden;
+  will-change: transform;
 `
 
 const sleep = (time = 10) => new Promise((resolve) => setTimeout(resolve, time))
@@ -52,6 +51,9 @@ const sleep = (time = 10) => new Promise((resolve) => setTimeout(resolve, time))
 const addStars = async (container: HTMLDivElement, count: number, initSize: number, mixedOpacity = false) => {
   const tasks = times(count, identity)
   const chunks = chunk(tasks, 8)
+
+  const stars = container.querySelectorAll(':scope > .star')
+  stars.forEach((star) => container.removeChild(star))
 
   for (const item of chunks) {
     times(item.length, () => {

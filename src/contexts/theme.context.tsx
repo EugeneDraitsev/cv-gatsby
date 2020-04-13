@@ -1,64 +1,59 @@
-import React, { memo, useMemo } from 'react'
+import React, { memo, useMemo, PropsWithChildren } from 'react'
 import { ThemeProvider as StyledProvider } from 'styled-components'
-import createMuiTheme, { Theme } from '@material-ui/core/styles/createMuiTheme'
+import createMuiTheme, { Theme as MaterialTheme } from '@material-ui/core/styles/createMuiTheme'
 import { Helmet } from 'react-helmet'
 import { ThemeProvider as MuiProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
-import { get, includes } from 'lodash-es'
 
-
-import * as themesStyles from '../styles/themes'
 import GlobalStyles from '../styles/global.styles'
 
-export type ThemeType = 'dark' | 'light'
-
-interface ThemeProviderProps {
-  children: JSX.Element
+type Colors = {
+  constant: string,
+  declaration: string,
+  string: string,
+  identifier: string,
+  keyword: string,
+  number: string,
+  background: string,
 }
 
-interface ThemeState {
+export type Theme = MaterialTheme & {
+  colors: Colors
+}
+
+type ThemeState = {
   theme: Theme
-  themeType: ThemeType
 }
-
-const themes = ['light', 'dark']
 
 const ThemeContext = React.createContext({} as ThemeState)
 
-const ThemeProvider = memo(({ children }: ThemeProviderProps) => {
-  const themeType = 'dark'
-  const styles = get(themesStyles, `[${themeType}]`)
-
-  const theme = useMemo(() => createMuiTheme({
-    palette: {
-      type: includes(themes, themeType) ? themeType : 'light',
-      ...styles,
-    },
-    typography: {
-      fontFamily: ['Roboto Mono', 'Lucida Console', '"Courier New"', 'monospace'].join(','),
-      caption: {
-        fontSize: '16px',
-        lineHeight: '20px',
-        color: 'rgba(0, 0, 0, 0.6)',
+const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
+  const colors = {
+    constant: '#AB77C6',
+    declaration: '#FFC66D',
+    string: '#79A161',
+    identifier: '#D1D1D1',
+    keyword: '#CC7832',
+    number: '#6897BB',
+    background: '#424242',
+  }
+  const theme = useMemo(() => {
+    const basicTheme = createMuiTheme({
+      palette: {
+        type: 'dark',
+        primary: { main: colors.constant },
+        secondary: { main: colors.declaration },
+        text: { primary: colors.identifier },
       },
-      h2: {
-        fontWeight: 'bold',
-        fontSize: '32px',
-        textTransform: 'uppercase',
+      typography: {
+        fontFamily: ['Roboto Mono', 'Lucida Console', '"Courier New"', 'monospace'].join(','),
       },
-      h4: {
-        fontWeight: 500,
-        fontSize: '32px',
-      },
-      h5: {
-        fontWeight: 'bold',
-        fontSize: '24px',
-      },
-    },
-  }), [styles, themeType])
+    })
+    return { ...basicTheme, colors }
+  }, [colors])
 
   return (
-    <ThemeContext.Provider value={{ theme, themeType }}>
+    <ThemeContext.Provider value={{ theme }}>
       <Helmet>
         <meta
           name="viewport"

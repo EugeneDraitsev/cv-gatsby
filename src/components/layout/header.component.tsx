@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { Container, Toolbar } from '@material-ui/core'
 import { map } from 'lodash-es'
 import { useWindowScroll, useWindowSize } from 'react-use'
 
@@ -16,15 +17,7 @@ const HeaderWrapper = styled.header<{ opacity: number }>`
   z-index: 1;
   transition: 100ms linear background-color;
 `
-const HeaderNav = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  max-width: 960px;
-  margin: 0 auto;
-`
+
 const HeaderLinkGroup = styled.div`
   display: flex;
   flex-direction: row;
@@ -43,15 +36,17 @@ export const Header = () => {
 
   return (
     <HeaderWrapper opacity={opacity}>
-      <HeaderNav>
-        <HeaderLinkGroup>
-          {map(headerLinks, (headerLink) => (
-            <HeaderLink to={headerLink.url} key={headerLink.url}>
-              {headerLink.label}
-            </HeaderLink>
-          ))}
-        </HeaderLinkGroup>
-      </HeaderNav>
+      <Container component="nav">
+        <Toolbar>
+          <HeaderLinkGroup>
+            {map(headerLinks, (headerLink) => (
+              <HeaderLink to={headerLink.url} key={headerLink.url}>
+                {headerLink.label}
+              </HeaderLink>
+            ))}
+          </HeaderLinkGroup>
+        </Toolbar>
+      </Container>
     </HeaderWrapper>
   )
 }

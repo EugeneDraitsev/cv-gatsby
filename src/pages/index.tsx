@@ -1,111 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaTelegram } from 'react-icons/fa'
-import Img from 'gatsby-image'
-import { graphql, useStaticQuery } from 'gatsby'
-import { Mail, GitHub, Linkedin } from 'react-feather'
 
-import siteConfig from '../../data/siteConfig'
-import { About, Skills, Repositories, Timeline, HeaderLayout } from '../components'
-import { getTransition } from '../styles'
+import { HeaderLayout, Title, Profile, Experience, Abilities, Projects, Contacts } from '../components'
 
 const PageContent = styled.div`
-  max-width: 100%;
-  margin-bottom: 40px;
-`
-const Avatar = styled(Img)`
-  margin: 0 auto 24px;
-  border-radius: 50%;
-  box-shadow: ${(p) => p.theme.shadows[3]};
-`
-const MainContent = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-`
-const SocialWrapper = styled.div`
-  margin: 12px 0;
-`
-const SocialLink = styled.a<{ color: string }>`
-  padding: 8px;
-  transition: ${(p) => getTransition(p.theme, ['color'])};
-  :hover {
-    color: ${(p) => p.color};
-  }
-`
-const Separator = styled.hr`
-  margin: 24px 0 16px 0;
-`
-const InfoItem = styled.div`
-  width: 50%;
-  padding: 10px;
-  @media(max-width: 800px) {
-    width: 100%;
-  }
-`
-const InfoContent = styled.div`
-  display: flex;
-  @media(max-width: 800px) {
-    flex-direction: column;
-  }
-`
-
-const query = graphql`
-  query {
-    file(relativePath: { eq: "avatar.jpg" }) {
-      childImageSharp {
-        fixed(width: 200, height: 200) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
+  margin: -100px 0 40px 0;
 `
 
 export default function Home() {
-  const data = useStaticQuery(query)
-
   return (
     <HeaderLayout title="CV">
       <PageContent>
-        <MainContent>
-          <Avatar fixed={data.file.childImageSharp.fixed} />
-          <SocialWrapper>
-            {siteConfig.social.github && (
-              <SocialLink color="#24292e" href={siteConfig.social.github} aria-label="github">
-                <GitHub size="32" />
-              </SocialLink>
-            )}
-            {siteConfig.social.linkedin && (
-              <SocialLink color="#0077B5" href={siteConfig.social.linkedin} aria-label="linkedin">
-                <Linkedin size="32" />
-              </SocialLink>
-            )}
-            {siteConfig.social.telergam && (
-              <SocialLink color="#259CD9" href={siteConfig.social.telergam} aria-label="telergam">
-                <FaTelegram size="32" />
-              </SocialLink>
-            )}
-            {siteConfig.social.email && (
-              <SocialLink color="#c23a2b" href={`mailto:${siteConfig.social.email}`} aria-label="email">
-                <Mail size="32" />
-              </SocialLink>
-            )}
-          </SocialWrapper>
-        </MainContent>
-        <InfoContent>
-          <InfoItem>
-            <About title="About" text={siteConfig.authorDescription} />
-          </InfoItem>
-          <InfoItem>
-            <Skills title="Skills" skills={siteConfig.skills} />
-          </InfoItem>
-        </InfoContent>
-        <Separator />
-        <Timeline />
-        <Separator />
-        <Repositories />
+        <Profile />
+
+        <Title>Experience</Title>
+        <Experience />
+
+        <Title>Abilities</Title>
+        <Abilities />
+
+        <Title>Projects</Title>
+        <Projects />
+
+        <Title>Contacts</Title>
+        <Contacts />
       </PageContent>
     </HeaderLayout>
   )

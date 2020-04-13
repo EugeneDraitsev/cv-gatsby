@@ -14,9 +14,7 @@ export default createGlobalStyle`
   *, *::before, *::after {
     box-sizing: inherit;
   }
-  strong, b {
-    font-weight: bolder;
-  }
+
   body {
     margin: 0;
     font-size: 0.875rem;
