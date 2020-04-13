@@ -58,7 +58,8 @@ module.exports = {
       duration: '3 years',
       location: 'Stockholm, Sweden / Minsk, Belarus',
       occupation: 'Senior Software Engineer',
-      description: 'Architect and develop frontend applications, mobile apps, GraphQl services and AWS infrastructure for that (TypeScript/Node/React)',
+      description: `Architect and develop frontend applications, mobile apps, 
+      GraphQl services and AWS infrastructure for it (TypeScript/Node/React)`,
     }, {
       company: 'ISSoft Solutions',
       companyIcon: 'issoft',
@@ -66,7 +67,8 @@ module.exports = {
       duration: '3 years',
       location: 'Minsk, Belarus',
       occupation: '(Senior) Software Engineer',
-      description: 'Develop web applications (Java backend + Angular Fronted) for customers from USA and Norway. A bit work with AWS services',
+      description: `Develop and later architect web applications (Java backend + Angular/React Fronted) for customers
+       from USA and Norway. AWS and docker-based infrastructure`,
     }, {
       company: 'Qulix Systems',
       companyIcon: 'qulix',
