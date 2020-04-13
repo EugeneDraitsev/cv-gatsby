@@ -1,8 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-import concat from 'lodash/concat'
-import isEmpty from 'lodash/isEmpty'
+import { concat, isEmpty } from 'lodash-es'
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {

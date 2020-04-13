@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import find from 'lodash/find'
+import { find } from 'lodash-es'
 
 import { graphql, useStaticQuery } from 'gatsby'
 

@@ -1,49 +1,59 @@
-import React, { memo, useCallback, useMemo } from 'react'
+import React, { memo, useMemo, PropsWithChildren } from 'react'
 import { ThemeProvider as StyledProvider } from 'styled-components'
-import createMuiTheme, { Theme } from '@material-ui/core/styles/createMuiTheme'
+import createMuiTheme, { Theme as MaterialTheme } from '@material-ui/core/styles/createMuiTheme'
 import { Helmet } from 'react-helmet'
 import { ThemeProvider as MuiProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
-import { useLocalStorage } from 'react-use'
-import get from 'lodash/get'
-import includes from 'lodash/includes'
 
-import * as themesStyles from '../styles/themes'
 import GlobalStyles from '../styles/global.styles'
 
-export type ThemeType = 'dark' | 'light'
-
-interface ThemeProviderProps {
-  children: JSX.Element
+type Colors = {
+  constant: string,
+  declaration: string,
+  string: string,
+  identifier: string,
+  keyword: string,
+  number: string,
+  background: string,
 }
 
-interface ThemeState {
+export type Theme = MaterialTheme & {
+  colors: Colors
+}
+
+type ThemeState = {
   theme: Theme
-  themeType: ThemeType
-  toggleTheme: () => void
 }
-
-const themes = ['light', 'dark']
 
 const ThemeContext = React.createContext({} as ThemeState)
 
-const ThemeProvider = memo(({ children }: ThemeProviderProps) => {
-  const [themeType, setTheme] = useLocalStorage<ThemeType>('cv-theme', 'light')
-  const styles = get(themesStyles, `[${themeType}]`)
-
-  const theme = useMemo(() => createMuiTheme({
-    palette: {
-      type: includes(themes, themeType) ? themeType : 'light',
-      ...styles,
-    },
-  }), [styles, themeType])
-
-  const toggleTheme = useCallback(() => {
-    setTheme((current: ThemeType) => (current === 'dark' ? 'light' : 'dark'))
-  }, [setTheme])
+const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
+  const colors = {
+    constant: '#d694f9',
+    declaration: '#FFC66D',
+    string: '#a4c591',
+    identifier: '#D1D1D1',
+    keyword: '#CC7832',
+    number: '#9fd6ff',
+    background: '#424242',
+  }
+  const theme = useMemo(() => {
+    const basicTheme = createMuiTheme({
+      palette: {
+        type: 'dark',
+        primary: { main: colors.constant },
+        secondary: { main: colors.declaration },
+        text: { primary: colors.identifier },
+      },
+      typography: {
+        fontFamily: ['Roboto Mono', 'Lucida Console', '"Courier New"', 'monospace'].join(','),
+      },
+    })
+    return { ...basicTheme, colors }
+  }, [colors])
 
   return (
-    <ThemeContext.Provider value={{ theme, themeType, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme }}>
       <Helmet>
         <meta
           name="viewport"

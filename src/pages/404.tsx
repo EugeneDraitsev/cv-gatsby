@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { HeaderLayout } from '../components/layout/header-layout.component'
+import { HeaderLayout } from '../components'
 
 const MainTitle = styled.h1`
   line-height: 1.5;
@@ -18,7 +18,7 @@ const Text = styled.p`
 
 export default function NotFoundPage() {
   return (
-    <HeaderLayout title="Page Not Found" heroImg="/images/404.jpeg" heroTitle="404">
+    <HeaderLayout title="Page Not Found">
       <MainTitle>404 Page Not Found</MainTitle>
       <ImageWrapper>
         <img src="/images/ufo-and-cow.svg" alt="ufo and cow" />
