@@ -29,12 +29,12 @@ const ThemeContext = React.createContext({} as ThemeState)
 
 const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
   const colors = {
-    constant: '#AB77C6',
+    constant: '#d694f9',
     declaration: '#FFC66D',
-    string: '#79A161',
+    string: '#a4c591',
     identifier: '#D1D1D1',
     keyword: '#CC7832',
-    number: '#6897BB',
+    number: '#9fd6ff',
     background: '#424242',
   }
   const theme = useMemo(() => {
