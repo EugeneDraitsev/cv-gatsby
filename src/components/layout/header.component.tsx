@@ -14,7 +14,7 @@ const HeaderWrapper = styled.header<{ opacity: number }>`
   width: 100%;
   background-color: rgba(0, 0, 0, ${(p) => p.opacity});
   color: #fff;
-  z-index: 1;
+  z-index: 2;
   transition: 100ms linear background-color;
 `
 

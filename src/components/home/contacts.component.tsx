@@ -30,7 +30,7 @@ const SocialLink = styled.a<{ color: string }>`
 export const Contacts = memo(() => (
   <ContactsCard>
     <CardContent>
-      <SubTitle>You can find me here:</SubTitle>
+      <SubTitle>You can find me here</SubTitle>
       <SocialWrapper>
         {siteConfig.social.github && (
           <SocialLink color="#24292e" href={siteConfig.social.github} aria-label="github">

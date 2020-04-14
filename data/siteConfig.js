@@ -7,8 +7,8 @@ module.exports = {
   authorName: 'Eugene Draitsev',
   githubUsername: 'EugeneDraitsev',
   authorAvatar: '/images/avatar.jpg',
-  authorDescription: `My name is Eugene and I'm software engineer. I like math, science, cats, algorithms and other 
-  boring things. I started work as developer at 2011 and got an systems engineer degree at BSUIR at 2013. 
+  authorDescription: `My name is Eugene and I'm a software engineer. I like math, science, cats, algorithms and other 
+  boring things. I started working as a developer in 2011 and received a system engineer diploma at BSUIR in 2013.. 
   I've worked almost all my experience as a fullstack developer (Node/Java + Frontend). 
   I really like functional programming, serverless approach and cloud platforms. 
   I currently work as a fullstack developer and mainly work with React, TypeScript, GraphQL and AWS`,
