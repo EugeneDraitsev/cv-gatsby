@@ -62,29 +62,28 @@ module.exports = {
         sitemap: 'https://eugene-draitsev.surge.sh//sitemap.xml',
         env: {
           development: {
-            policy: [{
-              userAgent: '*',
-              disallow: ['/'],
-            }],
+            policy: [
+              {
+                userAgent: '*',
+                disallow: ['/'],
+              },
+            ],
           },
           production: {
-            policy: [{
-              userAgent: '*',
-              allow: '/',
-            }],
+            policy: [
+              {
+                userAgent: '*',
+                allow: '/',
+              },
+            ],
           },
         },
       },
     },
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          {
-            family: 'Roboto Mono',
-            variants: ['100', '400', '600'],
-          },
-        ],
+        fonts: ['Roboto Mono:100,400,600 '],
       },
     },
     'gatsby-plugin-layout',
