@@ -15,7 +15,7 @@ const AbilitiesCard = styled(Card)`
 const SkillRating = styled(Rating)`
   margin-left: 10px;
   .MuiRating-iconFilled {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 `
 const Row = styled.div`
@@ -27,11 +27,10 @@ const Skills = styled.div`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 300px 300px;
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 `
-
 
 export const Abilities = memo(() => (
   <AbilitiesCard>
@@ -47,7 +46,12 @@ export const Abilities = memo(() => (
               {map(category.data, (skill) => (
                 <Row key={skill.name}>
                   <Constant>{skill.name}: </Constant>
-                  <SkillRating defaultValue={skill.value} precision={0.5} readOnly size="small" />
+                  <SkillRating
+                    defaultValue={skill.value}
+                    precision={0.5}
+                    readOnly
+                    size="small"
+                  />
                   <Keyword>,</Keyword>
                 </Row>
               ))}
@@ -62,7 +66,12 @@ export const Abilities = memo(() => (
         {map(siteConfig.languages, (language) => (
           <Row key={language.name}>
             <Constant>{language.name}: </Constant>
-            <SkillRating defaultValue={language.value} precision={0.5} readOnly size="small" />
+            <SkillRating
+              defaultValue={language.value}
+              precision={0.5}
+              readOnly
+              size="small"
+            />
             <Keyword>,</Keyword>
           </Row>
         ))}

@@ -11,11 +11,16 @@ type LayoutProps = {
   keywords?: string[]
 }
 
-export const HeaderLayout = ({ title, description, keywords, children }: PropsWithChildren<LayoutProps>) => (
+export const HeaderLayout = ({
+  title,
+  description,
+  keywords,
+  children,
+}: PropsWithChildren<LayoutProps>) => (
   <>
     <Head title={title} description={description} keywords={keywords} />
     <Header />
     <GalaxyHeader />
-    <Container>{children}</Container>
+    <Container>{children!}</Container>
   </>
 )

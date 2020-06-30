@@ -1,6 +1,8 @@
 import React, { memo, useMemo, PropsWithChildren } from 'react'
 import { ThemeProvider as StyledProvider } from 'styled-components'
-import createMuiTheme, { Theme as MaterialTheme } from '@material-ui/core/styles/createMuiTheme'
+import createMuiTheme, {
+  Theme as MaterialTheme,
+} from '@material-ui/core/styles/createMuiTheme'
 import { Helmet } from 'react-helmet'
 import { ThemeProvider as MuiProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
@@ -8,13 +10,13 @@ import { CssBaseline } from '@material-ui/core'
 import GlobalStyles from '../styles/global.styles'
 
 type Colors = {
-  constant: string,
-  declaration: string,
-  string: string,
-  identifier: string,
-  keyword: string,
-  number: string,
-  background: string,
+  constant: string
+  declaration: string
+  string: string
+  identifier: string
+  keyword: string
+  number: string
+  background: string
 }
 
 export type Theme = MaterialTheme & {
@@ -46,7 +48,12 @@ const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
         text: { primary: colors.identifier },
       },
       typography: {
-        fontFamily: ['Roboto Mono', 'Lucida Console', '"Courier New"', 'monospace'].join(','),
+        fontFamily: [
+          'Roboto Mono',
+          'Lucida Console',
+          '"Courier New"',
+          'monospace',
+        ].join(','),
       },
     })
     return { ...basicTheme, colors }
@@ -63,9 +70,7 @@ const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
       <MuiProvider theme={theme}>
         <GlobalStyles />
         <CssBaseline />
-        <StyledProvider theme={theme}>
-          {children}
-        </StyledProvider>
+        <StyledProvider theme={theme}>{children}</StyledProvider>
       </MuiProvider>
     </ThemeContext.Provider>
   )

@@ -8,9 +8,7 @@ import siteConfig from '../../../data/siteConfig'
 import { Spinner } from '../spinner.component'
 import { SubTitle } from '../typography.component'
 
-const githubProfileUrl =
-  `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&sort=updated&per_page=5&page=1`
-
+const githubProfileUrl = `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&sort=updated&per_page=5&page=1`
 
 const ProjectsCard = styled(Card)`
   width: 100%;
@@ -54,7 +52,6 @@ const Caption = styled.div`
   font-size: 12px;
 `
 
-
 export const Projects = memo(() => {
   const state = useAsync(async () => {
     const response = await fetch(githubProfileUrl)
@@ -74,23 +71,25 @@ export const Projects = memo(() => {
             </Loading>
           )}
           {!loading && error && <div>{error.message}</div>}
-          {!loading && isArray(repositories) && map(repositories, (repository) => (
-            <Repository key={repository.html_url}>
-              <TextBlock>
-                <Link href={repository.html_url}>
-                  <strong>{repository.name}</strong>
-                </Link>
-                <Description>{repository.description}</Description>
-                <Caption>
-                  Updated: {new Date(repository.updated_at).toUTCString()}
-                </Caption>
-              </TextBlock>
-              <Stars>
-                <Star>★</Star>
-                <div>{repository.stargazers_count}</div>
-              </Stars>
-            </Repository>
-          ))}
+          {!loading &&
+            isArray(repositories) &&
+            map(repositories, (repository) => (
+              <Repository key={repository.html_url}>
+                <TextBlock>
+                  <Link href={repository.html_url}>
+                    <strong>{repository.name}</strong>
+                  </Link>
+                  <Description>{repository.description}</Description>
+                  <Caption>
+                    Updated: {new Date(repository.updated_at).toUTCString()}
+                  </Caption>
+                </TextBlock>
+                <Stars>
+                  <Star>★</Star>
+                  <div>{repository.stargazers_count}</div>
+                </Stars>
+              </Repository>
+            ))}
         </div>
       </CardContent>
     </ProjectsCard>

@@ -32,22 +32,38 @@ const Svg = styled.svg`
 `
 const Circle = styled.circle`
   animation: ${spinnerDash} 1.5s ease-in-out infinite;
-  stroke-dasharray: 1,200;
+  stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   stroke-linecap: round;
   stroke: ${(p) => p.color || p.theme.palette.primary.main};
 `
 
 interface SpinnerProps {
-  style?: object
   size?: number | string
   strokeWidth?: number
   color?: string
   className?: string
 }
 
-export const Spinner = ({ size = 50, color = '', strokeWidth = 2, className }: SpinnerProps) => (
-  <Svg className={className} style={{ width: size, height: size }} viewBox="25 25 50 50">
-    <Circle color={color} cx="50" cy="50" r="20" fill="none" strokeWidth={strokeWidth} strokeMiterlimit="10" />
+export const Spinner = ({
+  size = 50,
+  color = '',
+  strokeWidth = 2,
+  className,
+}: SpinnerProps) => (
+  <Svg
+    className={className}
+    style={{ width: size, height: size }}
+    viewBox="25 25 50 50"
+  >
+    <Circle
+      color={color}
+      cx="50"
+      cy="50"
+      r="20"
+      fill="none"
+      strokeWidth={strokeWidth}
+      strokeMiterlimit="10"
+    />
   </Svg>
 )

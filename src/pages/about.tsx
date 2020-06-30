@@ -30,7 +30,7 @@ const Iframe = styled.iframe`
   width: 100%;
   height: 100%;
   border: none;
-  background: #F6F6F6;
+  background: #f6f6f6;
 `
 
 export default () => {
@@ -45,16 +45,17 @@ export default () => {
         <MainTitle>About</MainTitle>
         <Text>
           The goal of this site is not only to have some CV-web site to share,
-          It&apos;s first of all an example of react-based app with fully passed google audit*.
-          In future I&apos;m planning to convert it to kind of personal blog, but for now that&apos;s just an CV.
+          It&apos;s first of all an example of react-based app with fully passed
+          google audit*. In future I&apos;m planning to convert it to kind of
+          personal blog, but for now that&apos;s just an CV.
         </Text>
         <LighthouseContainer>
           {loading && <Skeleton variant="rect" height={284} />}
-          {!loading && value && <Iframe srcDoc={value} title="Lighthouse results" />}
+          {!loading && value && (
+            <Iframe srcDoc={value} title="Lighthouse results" />
+          )}
         </LighthouseContainer>
-        <Caption>
-          *Tested in Chrome 78.0.3904.108
-        </Caption>
+        <Caption>*Tested in Chrome 78.0.3904.108</Caption>
       </Wrapper>
     </HeaderLayout>
   )

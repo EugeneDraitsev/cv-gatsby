@@ -34,6 +34,8 @@ export const CompanyLogo = memo(({ name, className }: CompanyLogoProps) => {
   `
 
   const data = useStaticQuery(query)
-  const image = find(data.images.edges, (x) => x.node.relativePath.includes(`companies/${name}.png`))
+  const image = find(data.images.edges, (x) =>
+    x.node.relativePath.includes(`companies/${name}.png`),
+  )
   return <Logo className={className} fixed={image.node.childImageSharp.fixed} />
 })

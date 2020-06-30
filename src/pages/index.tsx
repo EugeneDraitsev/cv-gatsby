@@ -1,7 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { HeaderLayout, Title, Profile, Experience, Abilities, Projects, Contacts } from '../components'
+import {
+  HeaderLayout,
+  Title,
+  Profile,
+  Experience,
+  Abilities,
+  Projects,
+  Contacts,
+} from '../components'
 
 const PageContent = styled.div`
   position: relative;

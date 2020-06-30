@@ -27,7 +27,12 @@ interface HeadProps {
   description?: string
 }
 
-export const Head = ({ description, meta = [], keywords, title }: HeadProps) => {
+export const Head = ({
+  description,
+  meta = [],
+  keywords,
+  title,
+}: HeadProps) => {
   const data = useStaticQuery(detailsQuery)
 
   const metaDescription = description || data.site.siteMetadata.description
@@ -65,7 +70,9 @@ export const Head = ({ description, meta = [], keywords, title }: HeadProps) => 
       content: metaDescription,
     },
   ]
-  const keywordsTag = isEmpty(keywords) ? [] : { name: 'keywords', content: keywords!.join(', ') }
+  const keywordsTag = isEmpty(keywords)
+    ? []
+    : { name: 'keywords', content: keywords!.join(', ') }
   const metaTags = concat(defaultMetaTags, meta, keywordsTag)
 
   return (

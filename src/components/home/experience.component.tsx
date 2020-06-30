@@ -5,9 +5,13 @@ import styled from 'styled-components'
 
 import siteConfig from '../../../data/siteConfig'
 import { Bracket } from '../bracket.component'
-import { Constant, Declaration, Keyword, SubTitle } from '../typography.component'
+import {
+  Constant,
+  Declaration,
+  Keyword,
+  SubTitle,
+} from '../typography.component'
 import { CompanyLogo } from './company-logo.component'
-
 
 const ExperienceCard = styled(Card)`
   width: 100%;
@@ -17,7 +21,7 @@ const Job = styled.div`
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
   }
@@ -28,7 +32,7 @@ const Logo = styled(CompanyLogo)`
   max-height: 60px;
   min-height: 60px;
   margin: auto 20px;
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     margin: 0 20px 10px 20px;
   }
 `
@@ -41,13 +45,13 @@ const JobSummary = styled.div`
   min-width: 250px;
   margin-right: 15px;
   font-size: 13px;
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     margin: 10px 0;
     text-align: center;
   }
 `
 const JobDescription = styled.div`
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     margin: 10px 0;
     text-align: center;
   }
@@ -70,9 +74,7 @@ export const Experience = memo(() => (
                 <div>{job.occupation}</div>
                 <div>{job.date}</div>
               </JobSummary>
-              <JobDescription>
-                {job.description}
-              </JobDescription>
+              <JobDescription>{job.description}</JobDescription>
             </Job>
             <Bracket />
             <Keyword>,</Keyword>
@@ -94,7 +96,9 @@ export const Experience = memo(() => (
                 <Declaration>{education.location}</Declaration>
                 <div>{education.degreeLevel}</div>
                 <div>{education.specialization}</div>
-                <div>{education.startYear} — {education.endYear}</div>
+                <div>
+                  {education.startYear} — {education.endYear}
+                </div>
               </JobSummary>
             </Job>
             <Bracket />

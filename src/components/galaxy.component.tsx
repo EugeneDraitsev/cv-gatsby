@@ -27,7 +27,8 @@ const GalaxyContainer = styled.div`
   .star {
     border-radius: 50%;
     position: absolute;
-    box-shadow: -6px -8px 10px #F8A50E, -4px 7px 10px #BFF80E, 6px -4px 10px #0ED6F8;
+    box-shadow: -6px -8px 10px #f8a50e, -4px 7px 10px #bff80e,
+      6px -4px 10px #0ed6f8;
     animation: ${fadeIn} 500ms ease-in-out;
   }
 `
@@ -39,7 +40,12 @@ const Galaxy = styled.div`
   height: 800px;
   width: 800px;
   margin: -200px auto auto auto;
-  background-image: radial-gradient(circle, peachpuff, darkblue, transparent 70%);
+  background-image: radial-gradient(
+    circle,
+    peachpuff,
+    darkblue,
+    transparent 70%
+  );
   animation: ${rotate} 300s linear infinite, ${fadeIn} 2500ms ease-in;
   border-radius: 50%;
   overflow: hidden;
@@ -48,7 +54,12 @@ const Galaxy = styled.div`
 
 const sleep = (time = 10) => new Promise((resolve) => setTimeout(resolve, time))
 
-const addStars = async (container: HTMLDivElement, count: number, initSize: number, mixedOpacity = false) => {
+const addStars = async (
+  container: HTMLDivElement,
+  count: number,
+  initSize: number,
+  mixedOpacity = false,
+) => {
   const tasks = times(count, identity)
   const chunks = chunk(tasks, 8)
 
@@ -69,8 +80,10 @@ const addStars = async (container: HTMLDivElement, count: number, initSize: numb
         opacity: mixedOpacity ? random(0.8) : 1,
         background,
       }
-      const styleString = Object.entries(style)
-        .reduce((acc, [propName, propValue]) => `${acc}${propName}:${propValue};`, '')
+      const styleString = Object.entries(style).reduce(
+        (acc, [propName, propValue]) => `${acc}${propName}:${propValue};`,
+        '',
+      )
       node.setAttribute('style', styleString)
       container.appendChild(node)
     })
@@ -78,7 +91,6 @@ const addStars = async (container: HTMLDivElement, count: number, initSize: numb
     await sleep(50)
   }
 }
-
 
 interface GalaxyProps {
   className?: string
@@ -90,7 +102,12 @@ export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      addStars(containerRef.current, Math.min(window.innerWidth, 2000) / 3, 5, true)
+      addStars(
+        containerRef.current,
+        Math.min(window.innerWidth, 2000) / 3,
+        5,
+        true,
+      )
     }
   }, [containerRef])
 
