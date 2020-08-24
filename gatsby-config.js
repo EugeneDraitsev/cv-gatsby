@@ -83,7 +83,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Roboto Mono:100,400,600 '],
+        fonts: ['Roboto Mono:100,400,600'],
       },
     },
     'gatsby-plugin-layout',

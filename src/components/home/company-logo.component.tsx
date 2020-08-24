@@ -1,11 +1,11 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import Img, { FixedObject } from 'gatsby-image'
 import { find } from 'lodash-es'
 
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Logo = styled(Img)`
+const Logo = styled(Img)<{ fixed: FixedObject }>`
   border-radius: 50%;
 `
 

@@ -42,7 +42,7 @@ export default () => {
   return (
     <HeaderLayout title="About">
       <Wrapper>
-        <MainTitle>About</MainTitle>
+        <MainTitle id="paypal">About</MainTitle>
         <Text>
           The goal of this site is not only to have some CV-web site to share,
           It&apos;s first of all an example of react-based app with fully passed
