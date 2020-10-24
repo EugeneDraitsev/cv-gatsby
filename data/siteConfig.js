@@ -60,7 +60,8 @@ module.exports = {
       occupation: 'Senior Software Engineer',
       description: `Architect and develop frontend applications, mobile apps, 
       GraphQl services and AWS infrastructure for it (TypeScript/Node/React)`,
-    }, {
+    },
+    {
       company: 'ISSoft Solutions',
       companyIcon: 'issoft',
       date: 'Sep 2013  –  Aug 2016',
@@ -69,22 +70,26 @@ module.exports = {
       occupation: '(Senior) Software Engineer',
       description: `Develop and later architect web applications (Java backend + Angular/React Fronted) for customers
        from USA and Norway. AWS and docker-based infrastructure`,
-    }, {
+    },
+    {
       company: 'Qulix Systems',
       companyIcon: 'qulix',
       date: 'Nov 2012 –  Sep 2013',
       duration: '10 months',
       location: 'Minsk, Belarus',
       occupation: 'Software Engineer',
-      description: 'Support and develop web applications for banks systems (Java + Js/Jquery)',
-    }, {
+      description:
+        'Support and develop web applications for banks systems (Java + Js/Jquery)',
+    },
+    {
       company: 'Epam Systems',
       companyIcon: 'epam',
       date: 'Dec 2011 – Nov 2012',
       duration: '11 months',
       location: 'Minsk, Belarus',
       occupation: 'Junior Software Engineer',
-      description: 'Work with some test project, small bugfixes in web-Java applications. Minor frontend tasks (Java/JQuery/Js)',
+      description:
+        'Work with some test project, small bugfixes in web-Java applications. Minor frontend tasks (Java/JQuery/Js)',
     },
   ],
   education: [
