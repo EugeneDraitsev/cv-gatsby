@@ -30,6 +30,9 @@ module.exports = {
         theme_color: config.theme_color,
         display: config.display,
         icon: config.icon,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
     {
@@ -87,7 +90,7 @@ module.exports = {
           {
             family: 'Roboto Mono',
             variable: true,
-            weights: [100, 400, 600],
+            weights: ['200..700'],
           },
         ],
       },
