@@ -61,7 +61,7 @@ const Nebulae = styled.div`
     transparent 70%
   );
 `
-const GalaxyWrapper = styled.div`
+const NebulaeWrapper2 = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
@@ -96,7 +96,7 @@ const generateSVG = (
   mixedOpacity = false,
 ) => {
   if (typeof window !== 'undefined') {
-    const count = 2000 * countMultiplier
+    const count = Math.min(window.innerWidth * 1.35, 2000) * countMultiplier
     const circles = times(count, () => {
       const style = {
         cx: random(true) * width,
@@ -146,11 +146,11 @@ export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
           <NebulaeWrapper>
             <Nebulae />
           </NebulaeWrapper>
-          <GalaxyWrapper>
+          <NebulaeWrapper2>
             <GalaxyContainer>
               <Galaxy svg={galaxySvg} />
             </GalaxyContainer>
-          </GalaxyWrapper>
+          </NebulaeWrapper2>
         </Universe>
       )}
     </Container>
