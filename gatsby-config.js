@@ -83,18 +83,6 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts-v2`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: 'Roboto Mono',
-    //         variable: true,
-    //         weights: ['200..700'],
-    //       },
-    //     ],
-    //   },
-    // },
     'gatsby-plugin-layout',
   ],
 }

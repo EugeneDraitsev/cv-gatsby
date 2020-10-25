@@ -23,7 +23,7 @@ const HeaderLinkGroup = styled.div`
   flex-direction: row;
 `
 const HeaderLink = styled(Link)`
-  padding: 0 20px;
+  margin-right: 30px;
   font-weight: 500;
 `
 

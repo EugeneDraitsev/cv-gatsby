@@ -1,6 +1,7 @@
-import React, { memo, useEffect, useRef } from 'react'
+import React, { memo } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { times, random, identity, chunk } from 'lodash-es'
+import { times, random } from 'lodash-es'
+import { useWindowSize } from 'react-use'
 
 const rotate = keyframes`
   from {
@@ -16,7 +17,7 @@ const fadeIn = keyframes`
   }
 `
 
-const GalaxyContainer = styled.div`
+const Container = styled.div`
   position: relative;
   width: 100%;
   height: 500px;
@@ -32,96 +33,126 @@ const GalaxyContainer = styled.div`
     animation: ${fadeIn} 500ms ease-in-out;
   }
 `
-const Universe = styled.div`
+const Universe = styled.div<{ svg: string }>`
+  height: 800px;
+  background-image: url('data:image/svg+xml;utf8,${(p) => p.svg}');
+  animation: ${fadeIn} 2500ms ease-in;
+`
+const NebulaeWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 800px;
+  height: 800px;
+  transform: translateX(-50%) translateY(calc(-50% - 50px));
+  background: transparent;
+  z-index: 0;
+`
+const Nebulae = styled.div`
+  width: 800px;
+  height: 800px;
   transform-style: preserve-3d;
   transform: perspective(50em) rotateX(-120deg) rotateY(20deg);
-`
-const Galaxy = styled.div`
-  height: 800px;
-  width: 800px;
-  margin: -200px auto auto auto;
+  animation: ${fadeIn} 2500ms ease-in;
   background-image: radial-gradient(
     circle,
-    peachpuff,
-    darkblue,
+    rgba(255, 218, 185, 1),
+    rgba(0, 0, 139, 1),
     transparent 70%
   );
-  animation: ${rotate} 300s linear infinite, ${fadeIn} 2500ms ease-in;
+`
+const GalaxyWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 800px;
+  height: 800px;
+  transform: translateX(-50%) translateY(calc(-50% - 50px));
+  background: transparent;
+  z-index: 0;
+`
+const GalaxyContainer = styled.div`
+  width: 800px;
+  height: 800px;
+  transform-style: preserve-3d;
+  transform: perspective(50em) rotateX(-120deg) rotateY(20deg);
+  z-index: 1;
+`
+const Galaxy = styled.div<{ svg: string }>`
+  height: 800px;
+  width: 800px;
+  background-image: url('data:image/svg+xml;utf8,${(p) => p.svg}');
+  animation: ${rotate} 300s linear infinite, ${fadeIn} 1500ms ease-in;
   border-radius: 50%;
   overflow: hidden;
   will-change: transform;
 `
 
-const sleep = (time = 10) => new Promise((resolve) => setTimeout(resolve, time))
-
-const addStars = async (
-  container: HTMLDivElement,
-  count: number,
-  initSize: number,
+const generateSVG = (
+  countMultiplier = 2,
+  width = 800,
+  height = 800,
+  initSize = 1.5,
   mixedOpacity = false,
 ) => {
-  const tasks = times(count, identity)
-  const chunks = chunk(tasks, 8)
-
-  const stars = container.querySelectorAll(':scope > .star')
-  stars.forEach((star) => container.removeChild(star))
-
-  for (const item of chunks) {
-    times(item.length, () => {
-      const size = random(initSize, true)
-      const background = `hsla(${random(360, true)},50%,75%, 1)`
-      const node = document.createElement('div')
-      node.classList.add('star')
+  if (typeof window !== 'undefined') {
+    const count = 2000 * countMultiplier
+    const circles = times(count, () => {
       const style = {
-        top: `${random(100, true)}%`,
-        left: `${random(100, true)}%`,
-        width: `${size}px`,
-        height: `${size}px`,
+        cx: random(true) * width,
+        cy: random(true) * height,
+        r: random(initSize, true),
         opacity: mixedOpacity ? random(0.8) : 1,
-        background,
+        fill: `hsla(${random(360, true)},50%,75%, 1)`,
       }
       const styleString = Object.entries(style).reduce(
-        (acc, [propName, propValue]) => `${acc}${propName}:${propValue};`,
+        (acc, [propName, propValue]) => `${acc} ${propName}="${propValue}"`,
         '',
       )
-      node.setAttribute('style', styleString)
-      container.appendChild(node)
+      return `<circle ${styleString} />`
     })
-    // eslint-disable-next-line no-await-in-loop
-    await sleep(50)
+
+    return `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">
+      ${circles.join('\n')}
+    </svg>
+  `
   }
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" />`
 }
 
 interface GalaxyProps {
   className?: string
 }
 
+const isBrowser = () => typeof window !== 'undefined'
+
+const galaxySvg = generateSVG()
+const universeSvg = generateSVG(
+  1,
+  isBrowser() ? window.innerWidth : 800,
+  800,
+  2.5,
+  true,
+)
+
 export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-  const galaxyRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    if (containerRef.current) {
-      addStars(
-        containerRef.current,
-        Math.min(window.innerWidth, 2000) / 3,
-        5,
-        true,
-      )
-    }
-  }, [containerRef])
-
-  useEffect(() => {
-    if (galaxyRef.current) {
-      addStars(galaxyRef.current, Math.min(window.innerWidth, 2000), 3)
-    }
-  }, [galaxyRef])
-
+  const { width } = useWindowSize()
   return (
-    <GalaxyContainer className={className} ref={containerRef}>
-      <Universe>
-        <Galaxy ref={galaxyRef} />
-      </Universe>
-    </GalaxyContainer>
+    <Container className={className}>
+      {Number.isFinite(width) && (
+        <Universe svg={universeSvg}>
+          <NebulaeWrapper>
+            <Nebulae />
+          </NebulaeWrapper>
+          <GalaxyWrapper>
+            <GalaxyContainer>
+              <Galaxy svg={galaxySvg} />
+            </GalaxyContainer>
+          </GalaxyWrapper>
+        </Universe>
+      )}
+    </Container>
   )
 })

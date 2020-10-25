@@ -8,14 +8,14 @@ module.exports = {
   githubUsername: 'EugeneDraitsev',
   authorAvatar: '/images/avatar.jpg',
   authorDescription: `My name is Eugene and I'm a software engineer. I like math, science, cats, algorithms and other 
-  boring things. I started working as a developer in 2011 and received a system engineer diploma at BSUIR in 2013.. 
+  boring things. I started working as a developer in 2011 and received a system engineer diploma at BSUIR in 2013. 
   I've worked almost all my experience as a fullstack developer (Node/Java + Frontend). 
   I really like functional programming, serverless approach and cloud platforms. 
   I currently work as a fullstack developer and mainly work with React, TypeScript, GraphQL and AWS`,
   details: {
     name: 'Eugene Draitsev',
-    age: 29,
-    position: 'Senior Fullstack Engenier',
+    age: 30,
+    position: 'Senior Fullstack Engineer',
     location: 'Stockholm, Sweden',
   },
   skills: [

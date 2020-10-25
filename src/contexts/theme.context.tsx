@@ -67,9 +67,10 @@ const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
         <link
-          rel="preload"
+          rel="prefetch"
           href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200..700"
           as="style"
+          crossOrigin="true"
         />
       </Helmet>
       <MuiProvider theme={theme}>
