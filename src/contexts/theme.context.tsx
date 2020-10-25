@@ -66,6 +66,11 @@ const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200..700"
+          as="style"
+        />
       </Helmet>
       <MuiProvider theme={theme}>
         <GlobalStyles />
