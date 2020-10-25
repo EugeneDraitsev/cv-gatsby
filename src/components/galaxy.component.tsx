@@ -141,7 +141,7 @@ export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
   const { width } = useWindowSize()
   return (
     <Container className={className}>
-      {Number.isFinite(width) && <Universe svg={universeSvg}></Universe>}
+      {Number.isFinite(width) && <Universe svg={universeSvg} />}
     </Container>
   )
 })
