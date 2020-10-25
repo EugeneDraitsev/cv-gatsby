@@ -128,6 +128,7 @@ interface GalaxyProps {
 
 const isBrowser = () => typeof window !== 'undefined'
 
+console.time('generate time')
 const galaxySvg = generateSVG()
 const universeSvg = generateSVG(
   1,
@@ -136,6 +137,7 @@ const universeSvg = generateSVG(
   2.5,
   true,
 )
+console.timeEnd('generate time')
 
 export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
   const { width } = useWindowSize()
