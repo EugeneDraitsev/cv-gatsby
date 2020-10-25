@@ -23,9 +23,10 @@ module.exports = {
       name: 'Programming Languages',
       data: [
         { name: 'Javascript', value: 5 },
-        { name: 'Typescript', value: 4.5 },
+        { name: 'Typescript', value: 5 },
         { name: 'HTML', value: 5 },
         { name: 'CSS', value: 5 },
+        { name: 'Kotlin', value: 3.5 },
         { name: 'Java', value: 3.5 },
         { name: 'Swift', value: 3 },
       ],
@@ -52,13 +53,23 @@ module.exports = {
   ],
   jobs: [
     {
+      company: 'Daniel Wellington',
+      companyIcon: 'dw',
+      date: 'June 2020 –  Now',
+      duration: '6 months',
+      location: 'Stockholm, Sweden',
+      occupation: 'Senior Fullstack Engineer',
+      description: `Design and develop e-commerce frontend and serverless backend for the main store site.
+      Integration of third-party services, scalability and performance improvements.`,
+    },
+    {
       company: 'eBuilder',
       companyIcon: 'ebuilder',
-      date: 'Aug 2016 –  Now',
-      duration: '3 years',
+      date: 'Aug 2016 –  June 2020',
+      duration: '4 years',
       location: 'Stockholm, Sweden / Minsk, Belarus',
       occupation: 'Senior Software Engineer',
-      description: `Architect and develop frontend applications, mobile apps, 
+      description: `Architect and develop frontend applications, React Native app, 
       GraphQl services and AWS infrastructure for it (TypeScript/Node/React)`,
     },
     {
@@ -68,7 +79,7 @@ module.exports = {
       duration: '3 years',
       location: 'Minsk, Belarus',
       occupation: '(Senior) Software Engineer',
-      description: `Develop and later architect web applications (Java backend + Angular/React Fronted) for customers
+      description: `Develop and architect web applications (Java backend + Angular/React Fronted) for customers
        from USA and Norway. AWS and docker-based infrastructure`,
     },
     {
@@ -79,7 +90,7 @@ module.exports = {
       location: 'Minsk, Belarus',
       occupation: 'Software Engineer',
       description:
-        'Support and develop web applications for banks systems (Java + Js/Jquery)',
+        'Support and develop web applications for bank systems (Java + Js/Jquery)',
     },
     {
       company: 'Epam Systems',

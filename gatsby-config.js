@@ -81,9 +81,15 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-fonts',
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
-        fonts: ['Roboto Mono:100,400,600'],
+        fonts: [
+          {
+            family: 'Roboto Mono',
+            variable: true,
+            weights: [100, 400, 600],
+          },
+        ],
       },
     },
     'gatsby-plugin-layout',
