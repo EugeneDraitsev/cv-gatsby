@@ -128,7 +128,6 @@ interface GalaxyProps {
 
 const isBrowser = () => typeof window !== 'undefined'
 
-console.time('generate time')
 const galaxySvg = generateSVG()
 const universeSvg = generateSVG(
   1,
@@ -137,24 +136,12 @@ const universeSvg = generateSVG(
   2.5,
   true,
 )
-console.timeEnd('generate time')
 
 export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
   const { width } = useWindowSize()
   return (
     <Container className={className}>
-      {Number.isFinite(width) && (
-        <Universe svg={universeSvg}>
-          <NebulaeWrapper>
-            <Nebulae />
-          </NebulaeWrapper>
-          <NebulaeWrapper2>
-            <GalaxyContainer>
-              <Galaxy svg={galaxySvg} />
-            </GalaxyContainer>
-          </NebulaeWrapper2>
-        </Universe>
-      )}
+      {Number.isFinite(width) && <Universe svg={universeSvg}></Universe>}
     </Container>
   )
 })
