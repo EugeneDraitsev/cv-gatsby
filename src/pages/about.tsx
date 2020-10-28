@@ -2,9 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useAsync } from 'react-use'
 import { Skeleton } from '@material-ui/lab'
-import { Link } from '@material-ui/core'
 
-import { HeaderLayout } from '../components'
+import { HeaderLayout, Keyword } from '../components'
 
 const Wrapper = styled.div`
   display: flex;
@@ -56,16 +55,8 @@ export default () => {
             <Iframe srcDoc={value} title="Lighthouse results" />
           )}
         </LighthouseContainer>
-        <Caption>*Tested in Chrome 86.0.4240.111 in incognito mode</Caption>
         <Caption>
-          Also you can verify this result using following{' '}
-          <Link
-            target="_blank"
-            color="secondary"
-            href="https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Feugene-draitsev.netlify.app%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext"
-          >
-            link
-          </Link>
+          *Tested in Chrome 86.0.4240.111 in <Keyword>incognito mode</Keyword>
         </Caption>
       </Wrapper>
     </HeaderLayout>
