@@ -1,20 +1,13 @@
-import React, { memo, useEffect, useRef } from 'react'
-import styled, { keyframes } from 'styled-components'
-import { times, random, identity, chunk } from 'lodash-es'
-
-const rotate = keyframes`
-  from {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(360deg);
-  }
-`
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-`
+import React, { memo } from 'react'
+import {
+  FreeCamera,
+  Vector3,
+  HemisphericLight,
+  MeshBuilder,
+} from '@babylonjs/core'
+import styled from 'styled-components'
+// eslint-disable-next-line import/no-unresolved
+import SceneComponent from 'babylonjs-hook'
 
 const GalaxyContainer = styled.div`
   position: relative;
@@ -23,105 +16,57 @@ const GalaxyContainer = styled.div`
   max-height: 60vh;
   background: black;
   overflow: hidden;
-  filter: grayscale(100%);
-  .star {
-    border-radius: 50%;
-    position: absolute;
-    box-shadow: -6px -8px 10px #f8a50e, -4px 7px 10px #bff80e,
-      6px -4px 10px #0ed6f8;
-    animation: ${fadeIn} 500ms ease-in-out;
-  }
 `
-const Universe = styled.div`
-  transform-style: preserve-3d;
-  transform: perspective(50em) rotateX(-120deg) rotateY(20deg);
-`
-const Galaxy = styled.div`
-  height: 800px;
-  width: 800px;
-  margin: -200px auto auto auto;
-  background-image: radial-gradient(
-    circle,
-    peachpuff,
-    darkblue,
-    transparent 70%
-  );
-  animation: ${rotate} 300s linear infinite, ${fadeIn} 2500ms ease-in;
-  border-radius: 50%;
-  overflow: hidden;
-  will-change: transform;
-`
-
-const sleep = (time = 10) => new Promise((resolve) => setTimeout(resolve, time))
-
-const addStars = async (
-  container: HTMLDivElement,
-  count: number,
-  initSize: number,
-  mixedOpacity = false,
-) => {
-  const tasks = times(count, identity)
-  const chunks = chunk(tasks, 8)
-
-  const stars = container.querySelectorAll(':scope > .star')
-  stars.forEach((star) => container.removeChild(star))
-
-  for (const item of chunks) {
-    times(item.length, () => {
-      const size = random(initSize, true)
-      const background = `hsla(${random(360, true)},50%,75%, 1)`
-      const node = document.createElement('div')
-      node.classList.add('star')
-      const style = {
-        top: `${random(100, true)}%`,
-        left: `${random(100, true)}%`,
-        width: `${size}px`,
-        height: `${size}px`,
-        opacity: mixedOpacity ? random(0.8) : 1,
-        background,
-      }
-      const styleString = Object.entries(style).reduce(
-        (acc, [propName, propValue]) => `${acc}${propName}:${propValue};`,
-        '',
-      )
-      node.setAttribute('style', styleString)
-      container.appendChild(node)
-    })
-    // eslint-disable-next-line no-await-in-loop
-    await sleep(50)
-  }
-}
 
 interface GalaxyProps {
   className?: string
 }
 
-export const GalaxyHeader = memo(({ className }: GalaxyProps) => {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-  const galaxyRef = useRef<HTMLDivElement | null>(null)
+let box: any
 
-  useEffect(() => {
-    if (containerRef.current) {
-      addStars(
-        containerRef.current,
-        Math.min(window.innerWidth, 2000) / 3,
-        5,
-        true,
-      )
-    }
-  }, [containerRef])
+const onSceneReady = (scene: any) => {
+  // This creates and positions a free camera (non-mesh)
+  const camera = new FreeCamera('camera1', new Vector3(0, 5, -10), scene)
+  // This targets the camera to scene origin
+  camera.setTarget(Vector3.Zero())
+  const canvas = scene.getEngine().getRenderingCanvas()
+  // This attaches the camera to the canvas
+  camera.attachControl(canvas, true)
+  // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
+  const light = new HemisphericLight('light', new Vector3(0, 1, 0), scene)
+  // Default intensity is 1. Let's dim the light a small amount
+  light.intensity = 0.7
+  // Our built-in 'box' shape.
+  box = MeshBuilder.CreateBox('box', { size: 2 }, scene)
+  // Move the box upward 1/2 its height
+  box.position.y = 1
+  // Our built-in 'ground' shape.
+  MeshBuilder.CreateGround('ground', { width: 6, height: 6 }, scene)
+}
 
-  useEffect(() => {
-    if (galaxyRef.current) {
-      addStars(galaxyRef.current, Math.min(window.innerWidth, 2000), 3)
-    }
-  }, [galaxyRef])
+/**
+ * Will run on every frame render. We are spinning the box on y-axis.
+ */
+const onRender = (scene: any) => {
+  if (box !== undefined) {
+    const deltaTimeInMillis = scene.getEngine().getDeltaTime()
+    const rpm = 10
+    box.rotation.y += (rpm / 60) * Math.PI * 2 * (deltaTimeInMillis / 1000)
+  }
+}
 
+const GalaxyHeader = memo(({ className }: GalaxyProps) => {
   return (
-    <GalaxyContainer className={className} ref={containerRef}>
-      <Universe>
-        <Galaxy ref={galaxyRef} />
-      </Universe>
+    <GalaxyContainer className={className}>
+      <SceneComponent
+        id="my-canvas"
+        style={{ width: '100%' }}
+        antialias
+        onSceneReady={onSceneReady}
+        onRender={onRender}
+      />
     </GalaxyContainer>
   )
 })
+
+export default GalaxyHeader
