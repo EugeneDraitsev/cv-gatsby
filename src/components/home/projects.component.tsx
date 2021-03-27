@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { Card, CardContent, Link } from '@material-ui/core'
 import { useAsync } from 'react-use'
 import { isArray, map } from 'lodash-es'

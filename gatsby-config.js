@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
+    `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -43,7 +44,7 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-styled-components',
+    `gatsby-plugin-emotion`,
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',

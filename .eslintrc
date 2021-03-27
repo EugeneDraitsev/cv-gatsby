@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "react-app", "prettier", "prettier/react"],
+  "extends": ["airbnb", "react-app", "prettier"],
   "plugins": ["@typescript-eslint"],
   "settings": {
     "import/resolver": {"node": {"extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]}}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { Container, Toolbar } from '@material-ui/core'
 import { map } from 'lodash-es'
 import { useWindowScroll, useWindowSize } from 'react-use'
