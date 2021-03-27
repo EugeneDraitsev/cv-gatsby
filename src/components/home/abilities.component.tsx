@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
-import styled from 'styled-components'
-import { Box, Card, CardContent } from '@material-ui/core'
-import { Rating } from '@material-ui/lab'
+import styled from '@emotion/styled'
+import { Box, Card, CardContent, Rating } from '@material-ui/core'
 import { map } from 'lodash-es'
 
 import { Bracket } from '../bracket.component'

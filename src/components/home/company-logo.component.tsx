@@ -1,11 +1,11 @@
 import React, { memo } from 'react'
-import styled from 'styled-components'
-import Img, { FixedObject } from 'gatsby-image'
+import styled from '@emotion/styled'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { find } from 'lodash-es'
 
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Logo = styled(Img)<{ fixed: FixedObject }>`
+const Logo = styled(GatsbyImage)`
   border-radius: 50%;
 `
 
@@ -23,9 +23,7 @@ export const CompanyLogo = memo(({ name, className }: CompanyLogoProps) => {
             relativePath
             name
             childImageSharp {
-              fixed(width: 60, height: 60) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(layout: FIXED)
             }
           }
         }
@@ -37,5 +35,11 @@ export const CompanyLogo = memo(({ name, className }: CompanyLogoProps) => {
   const image = find(data.images.edges, (x) =>
     x.node.relativePath.includes(`companies/${name}.png`),
   )
-  return <Logo className={className} fixed={image.node.childImageSharp.fixed} />
+  return (
+    <Logo
+      alt="logo"
+      className={className}
+      image={image.node.childImageSharp.gatsbyImageData}
+    />
+  )
 })

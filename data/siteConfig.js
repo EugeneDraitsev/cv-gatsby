@@ -6,8 +6,7 @@ module.exports = {
   keyWords: ['Eugene Draitsev', 'software-engineer', 'frontend-developer'],
   authorName: 'Eugene Draitsev',
   githubUsername: 'EugeneDraitsev',
-  authorAvatar: '/images/avatar.jpg',
-  authorDescription: `My name is Eugene and I'm a software engineer. I like math, science, cats, algorithms and other 
+  authorDescription: `Hi, my name is Eugene and I'm a software engineer. I like math, science, cats, algorithms and other 
   boring things. I started working as a developer in 2011 and received a system engineer diploma at BSUIR in 2013. 
   I've worked almost all my experience as a fullstack developer (Node/Java + Frontend). 
   I really like functional programming, serverless approach and cloud platforms. 
@@ -121,7 +120,6 @@ module.exports = {
     email: 'ddrrai@gmail.com',
   },
   siteUrl: 'https://eugene-draitsev.netlify.com/',
-  siteCover: '/images/cover.jpeg',
   background_color: '#000',
   theme_color: '#424242',
   display: 'minimal-ui',

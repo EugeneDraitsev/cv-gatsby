@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { useAsync } from 'react-use'
-import { Skeleton } from '@material-ui/lab'
+import { Skeleton } from '@material-ui/core'
 
 import { HeaderLayout, Keyword } from '../components'
 
@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: ${(p) => p.theme.palette.text.primary};
 `
 const MainTitle = styled.h1`
   line-height: 1;
@@ -50,7 +51,7 @@ export default () => {
           personal blog, but for now that&apos;s just an CV.
         </Text>
         <LighthouseContainer>
-          {loading && <Skeleton variant="rect" height={284} />}
+          {loading && <Skeleton variant="rectangular" height={284} />}
           {!loading && value && (
             <Iframe srcDoc={value} title="Lighthouse results" />
           )}

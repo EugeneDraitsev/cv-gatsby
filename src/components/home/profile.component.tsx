@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { Box, Card, CardContent, Link } from '@material-ui/core'
 import { isNumber, isString, map } from 'lodash-es'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import siteConfig from '../../../data/siteConfig'
 import { Bracket } from '../bracket.component'

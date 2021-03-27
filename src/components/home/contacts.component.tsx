@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { Card, CardContent } from '@material-ui/core'
 import { GitHub, Linkedin, Mail } from 'react-feather'
 import { FaTelegram } from 'react-icons/fa'
