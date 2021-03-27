@@ -44,7 +44,15 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        sourceMap: true,
+        autoLabel: 'dev-only',
+        labelFormat: `[local]`,
+        cssPropOptimization: true,
+      },
+    },
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',

@@ -57,7 +57,7 @@ export default () => {
           )}
         </LighthouseContainer>
         <Caption>
-          *Tested in Chrome 86.0.4240.111 in <Keyword>incognito mode</Keyword>
+          *Tested in Chrome 89.0.4389.90 in <Keyword>incognito mode</Keyword>
         </Caption>
       </Wrapper>
     </HeaderLayout>
