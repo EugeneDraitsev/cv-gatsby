@@ -27,7 +27,7 @@ const Container = styled.div`
 `
 const Universe = styled.div`
   height: 800px;
-  background-image: url('/images/universe.svg');
+  background-image: url('/svg/universe.svg');
   animation: ${fadeIn} 2500ms ease-in;
 `
 const NebulaeWrapper = styled.div`
@@ -73,7 +73,7 @@ const GalaxyContainer = styled.div`
 const Galaxy = styled.div`
   height: 800px;
   width: 800px;
-  background-image: url('/images/galaxy.svg');
+  background-image: url('/svg/galaxy.svg');
   animation: ${rotate} 300s linear infinite, ${fadeIn} 1500ms ease-in;
   border-radius: 50%;
   overflow: hidden;

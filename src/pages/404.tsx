@@ -7,13 +7,18 @@ const MainTitle = styled.h1`
   line-height: 1.5;
   text-align: center;
   font-size: 3rem;
+  color: ${(p) => p.theme.palette.text.primary};
 `
 const ImageWrapper = styled.div`
   width: 150px;
   margin: 0 auto;
+  img {
+    filter: invert(1);
+  }
 `
 const Text = styled.p`
   text-align: center;
+  color: ${(p) => p.theme.palette.text.primary};
 `
 
 export default function NotFoundPage() {
@@ -21,7 +26,7 @@ export default function NotFoundPage() {
     <HeaderLayout title="Page Not Found">
       <MainTitle>404 Page Not Found</MainTitle>
       <ImageWrapper>
-        <img src="/images/ufo-and-cow.svg" alt="ufo and cow" />
+        <img src="/svg/ufo-and-cow.svg" alt="ufo and cow" />
       </ImageWrapper>
       <Text>
         Looks like you&apos;ve followed a broken link or entered a URL that

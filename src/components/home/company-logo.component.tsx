@@ -23,7 +23,7 @@ export const CompanyLogo = memo(({ name, className }: CompanyLogoProps) => {
             relativePath
             name
             childImageSharp {
-              gatsbyImageData(layout: FIXED)
+              gatsbyImageData(width: 120)
             }
           }
         }
@@ -39,6 +39,7 @@ export const CompanyLogo = memo(({ name, className }: CompanyLogoProps) => {
     <Logo
       alt="logo"
       className={className}
+      objectFit="contain"
       image={image.node.childImageSharp.gatsbyImageData}
     />
   )
