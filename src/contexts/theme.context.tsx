@@ -1,9 +1,7 @@
 import React, { memo, useMemo, PropsWithChildren } from 'react'
 import { ThemeProvider as StyledProvider } from '@emotion/react'
-import createMuiTheme, {
-  Theme as MaterialTheme,
-} from '@material-ui/core/styles/createMuiTheme'
 import { Helmet } from 'react-helmet'
+import { createTheme, Theme as MaterialTheme } from '@material-ui/core/styles'
 import { ThemeProvider as MuiProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 
@@ -31,7 +29,7 @@ const ThemeContext = React.createContext({} as ThemeState)
 
 const ThemeProvider = memo(({ children }: PropsWithChildren<{}>) => {
   const theme = useMemo(() => {
-    const basicTheme = createMuiTheme({
+    const basicTheme = createTheme({
       palette: {
         mode: 'dark',
         primary: { main: colors.constant },

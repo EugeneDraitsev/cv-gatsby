@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Global, css } from '@emotion/react'
 
-export default () => (
+const GlobalStyles = memo(() => (
   <Global
     styles={css`
       html,
@@ -46,4 +46,6 @@ export default () => (
       }
     `}
   />
-)
+))
+
+export default GlobalStyles

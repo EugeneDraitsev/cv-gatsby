@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from '@emotion/styled'
 import { useAsync } from 'react-use'
 import { Skeleton } from '@material-ui/core'
@@ -34,7 +34,7 @@ const Iframe = styled.iframe`
   background: #f6f6f6;
 `
 
-export default () => {
+const About = memo(() => {
   const { loading, value } = useAsync(async () => {
     const result = await fetch('/lighthouse-report.data')
     return result.text()
@@ -62,4 +62,6 @@ export default () => {
       </Wrapper>
     </HeaderLayout>
   )
-}
+})
+
+export default About
