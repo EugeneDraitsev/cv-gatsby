@@ -2126,7 +2126,7 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@^15.0.1", "@types/node@^15.12.2":
+"@types/node@*", "@types/node@^15.0.1":
   version "15.12.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.2.tgz#1f2b42c4be7156ff4a6f914b2fb03d05fa84e38d"
   integrity sha512-zjQ69G564OCIWIOHSXyQEEDpdpGl+G348RAKY0XXy9Z5kU9Vzv1GMNnkar/ZJ8dzXB3COzD9Mo9NtRZ4xfgUww==
@@ -2135,6 +2135,11 @@
   version "14.17.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.3.tgz#6d327abaa4be34a74e421ed6409a0ae2f47f4c3d"
   integrity sha512-e6ZowgGJmTuXa3GyaPbTGxX17tnThl2aSSizrFthQ7m9uLGZBXiGhgE55cjRZTF5kjZvYn9EOPOMljdjwbflxw==
+
+"@types/node@^15.12.4":
+  version "15.12.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.4.tgz#e1cf817d70a1e118e81922c4ff6683ce9d422e26"
+  integrity sha512-zrNj1+yqYF4WskCMOHwN+w9iuD12+dGm0rQ35HLl9/Ouuq52cEtd0CH9qMgrdNmi5ejC1/V7vKEXYubB+65DkA==
 
 "@types/node@^8.5.7":
   version "8.10.66"
@@ -2168,10 +2173,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@^17.0.7":
-  version "17.0.7"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.7.tgz#b8ee15ead9e5d6c2c858b44949fdf2ebe5212232"
-  integrity sha512-Wd5xvZRlccOrCTej8jZkoFZuZRKHzanDDv1xglI33oBNFMWrqOSzrvWFw7ngSiZjrpJAzPKFtX7JvuXpkNmQHA==
+"@types/react-dom@^17.0.8":
+  version "17.0.8"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.8.tgz#3180de6d79bf53762001ad854e3ce49f36dd71fc"
+  integrity sha512-0ohAiJAx1DAUEcY9UopnfwCE9sSMDGnY/oXjWMax6g3RpzmTt2GMyMVAXcbn0mo8XAff0SbQJl2/SBU+hjSZ1A==
   dependencies:
     "@types/react" "*"
 
@@ -6321,10 +6326,10 @@ gatsby-plugin-manifest@3.7.1:
     semver "^7.3.5"
     sharp "^0.28.1"
 
-gatsby-plugin-material-ui@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-3.0.0.tgz#c1d1bf280922eeea878fcec9819320029b454260"
-  integrity sha512-eir+M+zhaILjVq8rA3vEiZXO7djeHGMGnKzH6rVCztNOMpDPQgqVtUebXUfx4qDqoZO0aH0DF8rqYhbS+y9T/g==
+gatsby-plugin-material-ui@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-3.0.1.tgz#eed9eb22a045ead1d0aa2f697f8fadd834891f27"
+  integrity sha512-HuIjm9MuE5wRiHK/MBrUMeNpSs3Gh8V9cKnt8wWKlyDKUoKcn6tQSqn5T8V8IADA4OFTo3Lq2gexOCbaulHUdg==
   dependencies:
     autoprefixer "^10.2.4"
     babel-preset-gatsby "^1.0.0"
@@ -6571,10 +6576,10 @@ gatsby-transformer-sharp@3.7.1:
     semver "^7.3.4"
     sharp "^0.28.0"
 
-gatsby@3.7.1:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.7.1.tgz#a9484399f9061135b61e4e8775e35326856f3326"
-  integrity sha512-DZlUr5ZERpD+3G+itMlK7YDtj5QRrq3hbP1NvjZAOhrZwn0nneFj4lmF2nnmQXLqR0x7RPPG3iQaxk/18UlUQw==
+gatsby@3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.7.2.tgz#e45174d86c4eb6cb1bf9bc89722f550352ad9aef"
+  integrity sha512-grweoXdoE/Y6f1/qj3wDJ5JVQvfEwz/EPqPF9IXE3fbHdItr6hFCfYW9TmQopSHMuCxzvNhoCgwtyUL6sobBgw==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.14.0"
@@ -13154,10 +13159,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.3.2:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.2.tgz#399ab18aac45802d6f2498de5054fcbbe716a805"
-  integrity sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==
+typescript@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
+  integrity sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
