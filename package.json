@@ -63,9 +63,6 @@
     "serve": "^12.0.0",
     "typescript": "^4.3.4"
   },
-  "resolutions": {
-    "gatsby-plugin-material-ui": "https://gitpkg.now.sh/daugsbi/gatsby-plugin-material-ui/gatsby-plugin-material-ui?master"
-  },
   "browserslist": [
     "defaults",
     "not IE 11"
