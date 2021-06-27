@@ -3,14 +3,19 @@
 module.exports = {
   siteTitle: 'Eugene Draitsev',
   siteDescription: 'Eugene Draitsev CV',
-  keyWords: ['Eugene Draitsev', 'software-engineer', 'frontend-developer'],
+  keyWords: [
+    'Eugene Draitsev',
+    'software-engineer',
+    'frontend-developer',
+    'fullstack-engineer',
+  ],
   authorName: 'Eugene Draitsev',
   githubUsername: 'EugeneDraitsev',
-  authorDescription: `Hi, my name is Eugene and I'm a software engineer. I like math, science, cats, algorithms and other 
-  boring things. I started working as a developer in 2011 and received a system engineer diploma at BSUIR in 2013. 
-  I've worked almost all my experience as a fullstack developer (Node/Java + Frontend). 
+  authorDescription: `Hi, my name is Eugene and I'm a software engineer. I like math, science, cats, algorithms, good UX
+  and other boring things. I started working as a developer in 2011 and received my system engineer diploma
+  at BSUIR in 2013. Almost all my experience has been as a fullstack developer (Node/Java + Frontend). 
   I really like functional programming, serverless approach and cloud platforms. 
-  I currently work as a fullstack developer and mainly work with React, TypeScript, GraphQL and AWS`,
+  I'm currently working as a fullstack developer and mostly working with React, TypeScript, GraphQL, and AWS.`,
   details: {
     name: 'Eugene Draitsev',
     age: 30,
