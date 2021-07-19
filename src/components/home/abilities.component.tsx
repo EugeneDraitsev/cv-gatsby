@@ -1,9 +1,10 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
-import { Box, Card, CardContent, Rating } from '@material-ui/core'
+import { Box, Card, CardContent } from '@material-ui/core'
 import { map } from 'lodash-es'
 
 import { Bracket } from '../bracket.component'
+import { Rating } from '../rating.component'
 import { Constant, Keyword, SubTitle } from '../typography.component'
 import siteConfig from '../../../data/siteConfig'
 
@@ -13,9 +14,6 @@ const AbilitiesCard = styled(Card)`
 `
 const SkillRating = styled(Rating)`
   margin-left: 10px;
-  .MuiRating-iconFilled {
-    color: #ffffff;
-  }
 `
 const Row = styled.div`
   display: flex;
@@ -45,12 +43,7 @@ export const Abilities = memo(() => (
               {map(category.data, (skill) => (
                 <Row key={skill.name}>
                   <Constant>{skill.name}: </Constant>
-                  <SkillRating
-                    defaultValue={skill.value}
-                    precision={0.5}
-                    readOnly
-                    size="small"
-                  />
+                  <SkillRating value={skill.value} />
                   <Keyword>,</Keyword>
                 </Row>
               ))}
@@ -65,12 +58,7 @@ export const Abilities = memo(() => (
         {map(siteConfig.languages, (language) => (
           <Row key={language.name}>
             <Constant>{language.name}: </Constant>
-            <SkillRating
-              defaultValue={language.value}
-              precision={0.5}
-              readOnly
-              size="small"
-            />
+            <SkillRating value={language.value} />
             <Keyword>,</Keyword>
           </Row>
         ))}

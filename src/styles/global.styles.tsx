@@ -25,24 +25,14 @@ const GlobalStyles = memo(() => (
         font-size: 0.875rem !important;
         font-weight: 400 !important;
         line-height: 1.43 !important;
-        letter-spacing: 0.01071em !important;
+        letter-spacing: 0.01em !important;
         font-family: Roboto Mono, Lucida Console, 'Courier New', monospace !important;
-        background-color: #303030 !important;
+        background-color: rgb(43, 43, 43) !important;
       }
 
       a {
         text-decoration: none;
         color: inherit;
-      }
-
-      input {
-        &:-webkit-autofill,
-        &:-webkit-autofill:hover,
-        &:-webkit-autofill:focus,
-        &:-webkit-autofill:active {
-          transition-property: background-color, color;
-          transition-delay: 99999999999s;
-        }
       }
     `}
   />
