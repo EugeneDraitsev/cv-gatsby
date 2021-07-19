@@ -57,7 +57,7 @@ const About = memo(() => {
           )}
         </LighthouseContainer>
         <Caption>
-          *Tested in Chrome 89.0.4389.90 in <Keyword>incognito mode</Keyword>
+          *Tested in Chrome 91.0.4472.164 in <Keyword>incognito mode</Keyword>
         </Caption>
       </Wrapper>
     </HeaderLayout>
