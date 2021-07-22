@@ -1,9 +1,8 @@
 import React, { PropsWithChildren } from 'react'
-import { Container } from '@material-ui/core'
+import { Container, Box } from '@material-ui/core'
 
 import { Header } from './header.component'
 import { Head } from '../head.component'
-import { GalaxyHeader } from '../galaxy.component'
 
 type LayoutProps = {
   title: string
@@ -17,10 +16,9 @@ export const HeaderLayout = ({
   keywords,
   children,
 }: PropsWithChildren<LayoutProps>) => (
-  <>
+  <Box sx={{ bgcolor: 'background.default', flex: 1 }}>
     <Head title={title} description={description} keywords={keywords} />
     <Header />
-    <GalaxyHeader />
-    <Container>{children!}</Container>
-  </>
+    <Container>{children}</Container>
+  </Box>
 )

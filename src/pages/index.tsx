@@ -16,7 +16,8 @@ const PageContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: -100px 0 40px 0;
+  margin: -100px 0 0 0;
+  padding-bottom: 20px;
 `
 
 export default function Home() {

@@ -3,7 +3,7 @@ import { ThemeProvider as StyledProvider } from '@emotion/react'
 import { Helmet } from 'react-helmet'
 import { createTheme, Theme as MaterialTheme } from '@material-ui/core/styles'
 import { ThemeProvider as MuiProvider } from '@material-ui/styles'
-import { CssBaseline } from '@material-ui/core'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 import GlobalStyles from '../styles/global.styles'
 
