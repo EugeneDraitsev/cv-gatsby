@@ -21,7 +21,7 @@ const Container = styled.div`
   width: 100%;
   height: 500px;
   max-height: 60vh;
-  background: black;
+  background: #121212;
   overflow: hidden;
   filter: grayscale(100%);
 `
