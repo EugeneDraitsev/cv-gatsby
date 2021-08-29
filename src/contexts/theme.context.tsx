@@ -1,8 +1,11 @@
 import React, { memo, useMemo, PropsWithChildren } from 'react'
 import { ThemeProvider as StyledProvider } from '@emotion/react'
 import { Helmet } from 'react-helmet'
-import { createTheme, Theme as MaterialTheme } from '@material-ui/core/styles'
-import { ThemeProvider as MuiProvider } from '@material-ui/styles'
+import {
+  createTheme,
+  Theme as MaterialTheme,
+  ThemeProvider as MuiProvider,
+} from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import GlobalStyles from '../styles/global.styles'

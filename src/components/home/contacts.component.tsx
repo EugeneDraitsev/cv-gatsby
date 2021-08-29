@@ -1,8 +1,7 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
 import { Card, CardContent } from '@material-ui/core'
-import { GitHub, Linkedin, Mail } from 'react-feather'
-import { FaTelegram } from 'react-icons/fa'
+import { FaTelegram, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 import siteConfig from '../../../data/siteConfig'
 import { SubTitle } from '../typography.component'
@@ -34,11 +33,11 @@ export const Contacts = memo(() => (
       <SocialWrapper>
         {siteConfig.social.github && (
           <SocialLink
-            color="#24292e"
+            color="#818c96"
             href={siteConfig.social.github}
             aria-label="github"
           >
-            <GitHub size="32" />
+            <FaGithub size="32" />
           </SocialLink>
         )}
         {siteConfig.social.linkedin && (
@@ -47,7 +46,7 @@ export const Contacts = memo(() => (
             href={siteConfig.social.linkedin}
             aria-label="linkedin"
           >
-            <Linkedin size="32" />
+            <FaLinkedin size="32" />
           </SocialLink>
         )}
         {siteConfig.social.telergam && (
@@ -65,7 +64,7 @@ export const Contacts = memo(() => (
             href={`mailto:${siteConfig.social.email}`}
             aria-label="email"
           >
-            <Mail size="32" />
+            <FaEnvelope size="32" />
           </SocialLink>
         )}
       </SocialWrapper>
