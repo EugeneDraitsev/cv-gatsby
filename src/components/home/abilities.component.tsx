@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
 import { Box, Card, CardContent } from '@material-ui/core'
-import { map } from 'lodash-es'
 
 import { Bracket } from '../bracket.component'
 import { Rating } from '../rating.component'
@@ -34,13 +33,13 @@ export const Abilities = memo(() => (
     <CardContent>
       <SubTitle>Skills</SubTitle>
       <Skills>
-        {map(siteConfig.skills, (category) => (
+        {siteConfig.skills?.map((category) => (
           <div key={category.name}>
             <div>{category.name}:</div>
             <Box mt={2} />
             <Bracket open />
             <Box ml={2}>
-              {map(category.data, (skill) => (
+              {category.data?.map((skill) => (
                 <Row key={skill.name}>
                   <Constant>{skill.name}: </Constant>
                   <SkillRating value={skill.value} />
@@ -55,7 +54,7 @@ export const Abilities = memo(() => (
       <SubTitle>Languages</SubTitle>
       <Bracket open />
       <Box ml={2}>
-        {map(siteConfig.languages, (language) => (
+        {siteConfig.languages?.map((language) => (
           <Row key={language.name}>
             <Constant>{language.name}: </Constant>
             <SkillRating value={language.value} />

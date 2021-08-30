@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 import { Box, Card, CardContent } from '@material-ui/core'
-import { map } from 'lodash-es'
 import styled from '@emotion/styled'
 
 import siteConfig from '../../../data/siteConfig'
@@ -63,7 +62,7 @@ export const Experience = memo(() => (
       <SubTitle>Careers</SubTitle>
       <Bracket square open />
       <Box ml={2}>
-        {map(siteConfig.jobs, (job) => (
+        {siteConfig.jobs?.map((job) => (
           <div key={job.date}>
             <Bracket open />
             <Job>
@@ -86,7 +85,7 @@ export const Experience = memo(() => (
       <SubTitle>Education</SubTitle>
       <Bracket square open />
       <Box ml={2}>
-        {map(siteConfig.education, (education) => (
+        {siteConfig.education?.map((education) => (
           <div key={education.startYear}>
             <Bracket open />
             <Job>

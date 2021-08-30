@@ -2,7 +2,6 @@ import React, { memo } from 'react'
 import styled from '@emotion/styled'
 import { Card, CardContent, Link } from '@material-ui/core'
 import { useAsync } from 'react-use'
-import { isArray, map } from 'lodash-es'
 
 import siteConfig from '../../../data/siteConfig'
 import { Spinner } from '../spinner.component'
@@ -72,8 +71,7 @@ export const Projects = memo(() => {
           )}
           {!loading && error && <div>{error.message}</div>}
           {!loading &&
-            isArray(repositories) &&
-            map(repositories, (repository) => (
+            repositories?.map((repository: any) => (
               <Repository key={repository.html_url}>
                 <TextBlock>
                   <Link href={repository.html_url}>

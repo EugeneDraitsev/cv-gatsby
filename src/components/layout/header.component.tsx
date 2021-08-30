@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { Container, Toolbar } from '@material-ui/core'
-import { map } from 'lodash-es'
 import { useWindowScroll, useWindowSize } from 'react-use'
 
 import siteConfig from '../../../data/siteConfig'
@@ -39,7 +38,7 @@ export const Header = () => {
       <Container component="nav">
         <Toolbar>
           <HeaderLinkGroup>
-            {map(headerLinks, (headerLink) => (
+            {headerLinks.map((headerLink) => (
               <HeaderLink to={headerLink.url} key={headerLink.url}>
                 {headerLink.label}
               </HeaderLink>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-import { concat, isEmpty } from 'lodash-es'
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
@@ -70,10 +69,10 @@ export const Head = ({
       content: metaDescription,
     },
   ]
-  const keywordsTag = isEmpty(keywords)
-    ? []
-    : { name: 'keywords', content: keywords!.join(', ') }
-  const metaTags = concat(defaultMetaTags, meta, keywordsTag)
+  const keywordsTag = keywords?.length
+    ? { name: 'keywords', content: keywords.join(', ') }
+    : []
+  const metaTags = defaultMetaTags.concat(meta).concat(keywordsTag)
 
   return (
     <Helmet

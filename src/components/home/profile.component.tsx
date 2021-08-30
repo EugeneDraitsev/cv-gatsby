@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 import { Box, Card, CardContent, Link } from '@material-ui/core'
-import { isNumber, isString, map } from 'lodash-es'
 import styled from '@emotion/styled'
 
 import siteConfig from '../../../data/siteConfig'
@@ -62,11 +61,13 @@ export const Profile = memo(() => (
         <DetailsContent>
           <Bracket open />
           <Box ml={2}>
-            {map(siteConfig.details, (value, key) => (
+            {Object.entries(siteConfig.details).map(([key, value]) => (
               <div key={key}>
                 <Constant>{key}</Constant>:
-                {isNumber(value) && <NumberValue> {value}</NumberValue>}
-                {isString(value) && (
+                {typeof value === 'number' && (
+                  <NumberValue> {value}</NumberValue>
+                )}
+                {typeof value === 'string' && (
                   <StringValue> &apos;{value}&apos;</StringValue>
                 )}
                 <Keyword>,</Keyword>

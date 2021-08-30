@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-import { times } from 'lodash-es'
 
 const Star = styled.span<{ isActive: boolean; isHalfRating: boolean }>`
   position: relative;
@@ -30,7 +29,7 @@ type RatingProps = {
 
 export const Rating = memo(({ value, className }: RatingProps) => (
   <div className={className}>
-    {times(5, (i) => {
+    {Array.from({ length: 5 }, (x, i) => i).map((i) => {
       const isActive = value - 0.5 > i
       const isHalfRating = value - 0.5 === i
       return (
