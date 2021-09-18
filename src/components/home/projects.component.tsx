@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
-import { Card, CardContent, Link } from '@material-ui/core'
+import { Card, CardContent, Link } from '@mui/material'
 import { useAsync } from 'react-use'
 
 import siteConfig from '../../../data/siteConfig'

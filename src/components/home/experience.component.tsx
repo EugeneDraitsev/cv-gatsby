@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { Box, Card, CardContent } from '@material-ui/core'
+import { Box, Card, CardContent } from '@mui/material'
 import styled from '@emotion/styled'
 
 import siteConfig from '../../../data/siteConfig'

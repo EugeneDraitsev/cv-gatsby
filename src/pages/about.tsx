@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
 import { useAsync } from 'react-use'
-import { Skeleton } from '@material-ui/core'
+import { Skeleton } from '@mui/material'
 
 import { HeaderLayout, Keyword } from '../components'
 

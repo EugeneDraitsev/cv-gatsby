@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
-import { Card, CardContent } from '@material-ui/core'
+import { Card, CardContent } from '@mui/material'
 import { FaTelegram, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 import siteConfig from '../../../data/siteConfig'

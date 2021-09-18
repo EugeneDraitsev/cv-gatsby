@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { Container, Toolbar } from '@material-ui/core'
+import { Container, Toolbar } from '@mui/material'
 import { useWindowScroll, useWindowSize } from 'react-use'
 
 import siteConfig from '../../../data/siteConfig'

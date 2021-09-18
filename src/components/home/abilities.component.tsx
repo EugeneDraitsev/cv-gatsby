@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
-import { Box, Card, CardContent } from '@material-ui/core'
+import { Box, Card, CardContent } from '@mui/material'
 
 import { Bracket } from '../bracket.component'
 import { Rating } from '../rating.component'

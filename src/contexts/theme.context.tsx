@@ -5,8 +5,8 @@ import {
   createTheme,
   Theme as MaterialTheme,
   ThemeProvider as MuiProvider,
-} from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
+} from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 
 import GlobalStyles from '../styles/global.styles'
 
