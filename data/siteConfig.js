@@ -18,7 +18,7 @@ module.exports = {
   I'm currently working as a fullstack developer and mostly working with React, TypeScript, GraphQL, and AWS.`,
   details: {
     name: 'Eugene Draitsev',
-    age: 30,
+    birthDate: '1990-10-02',
     position: 'Senior Fullstack Engineer',
     location: 'Stockholm, Sweden',
   },

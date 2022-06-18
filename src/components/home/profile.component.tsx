@@ -12,6 +12,7 @@ import {
   StringValue,
   SubTitle,
 } from '../typography.component'
+import { formatDetails } from '../../utils'
 
 const InfoCard = styled(Card)`
   max-width: 900px;
@@ -61,18 +62,20 @@ export const Profile = memo(() => (
         <DetailsContent>
           <Bracket open />
           <Box ml={2}>
-            {Object.entries(siteConfig.details).map(([key, value]) => (
-              <div key={key}>
-                <Constant>{key}</Constant>:
-                {typeof value === 'number' && (
-                  <NumberValue> {value}</NumberValue>
-                )}
-                {typeof value === 'string' && (
-                  <StringValue> &apos;{value}&apos;</StringValue>
-                )}
-                <Keyword>,</Keyword>
-              </div>
-            ))}
+            {Object.entries(formatDetails(siteConfig.details)).map(
+              ([key, value]) => (
+                <div key={key}>
+                  <Constant>{key}</Constant>:
+                  {typeof value === 'number' && (
+                    <NumberValue> {value}</NumberValue>
+                  )}
+                  {typeof value === 'string' && (
+                    <StringValue> &apos;{value}&apos;</StringValue>
+                  )}
+                  <Keyword>,</Keyword>
+                </div>
+              ),
+            )}
           </Box>
           <Bracket />
         </DetailsContent>
