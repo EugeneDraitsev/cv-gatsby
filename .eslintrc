@@ -1,4 +1,3 @@
 {
-  "extends": ["react-app", "prettier"],
-  "plugins": ["@typescript-eslint"]
+  "extends": ["react-app", "prettier"]
 }
