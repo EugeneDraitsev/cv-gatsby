@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
 
 import { ThemeProvider } from '../contexts'
@@ -10,13 +10,18 @@ const PageWrapper = styled.div`
   min-height: 100vh;
 `
 
-const layout = ({ children }: { children: React.ReactNode }) => (
-  <ThemeProvider>
-    <PageWrapper>
-      <GalaxyHeader />
-      {children}
-    </PageWrapper>
-  </ThemeProvider>
-)
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  useEffect(() => {
+    window.location.href = 'https://eugene-draitsev.vercel.app/'
+  }, [])
+  return (
+    <ThemeProvider>
+      <PageWrapper>
+        <GalaxyHeader />
+        {children}
+      </PageWrapper>
+    </ThemeProvider>
+  )
+}
 
-export default layout
+export default Layout
