@@ -3,4 +3,4 @@
 
 ## Gatsby based CV
 
-This is an old CV site based on Gatsby. The new version of this CV is available [here]([https://eugene-draitsev.netlify.com/](https://github.com/EugeneDraitsev/cv-nextjs)https://github.com/EugeneDraitsev/cv-nextjs)
+This is an old CV site based on Gatsby. The new version of this CV is available [here](https://github.com/EugeneDraitsev/cv-nextjs)
